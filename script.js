@@ -3,28 +3,42 @@ const mobileMenu = document.querySelector('.mobile-menu');
 const hamburger = document.querySelector('.hamburger');
 const billingInput = document.querySelector('.billing-toggle input');
 const annualBadge = document.querySelector('.annual-badge');
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+let autoPlayId = null;
+
+function setMobileMenuState(open) {
+  mobileMenu?.classList.toggle('open', open);
+  document.body.classList.toggle('no-scroll', open);
+  hamburger?.setAttribute('aria-expanded', open ? 'true' : 'false');
+}
 
 window.addEventListener('scroll', () => {
   topbar?.classList.toggle('scrolled', window.scrollY > 60);
 });
 
 hamburger?.addEventListener('click', () => {
-  mobileMenu?.classList.toggle('open');
-  document.body.classList.toggle('no-scroll');
+  const open = !mobileMenu?.classList.contains('open');
+  setMobileMenuState(open);
 });
 
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener('click', (event) => {
     const href = anchor.getAttribute('href');
+    if (anchor.classList.contains('skip-link')) return;
     if (!href || href === '#') return;
     const target = document.querySelector(href);
     if (!target) return;
 
     event.preventDefault();
     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    mobileMenu?.classList.remove('open');
-    document.body.classList.remove('no-scroll');
+    setMobileMenuState(false);
   });
+});
+
+window.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') {
+    setMobileMenuState(false);
+  }
 });
 
 const sectionIds = ['como-funciona', 'beneficios', 'planos', 'para-escolas'];
@@ -40,7 +54,11 @@ const navObserver = new IntersectionObserver(
       navItems.forEach((item) => {
         const isActive = item.getAttribute('href') === `#${entry.target.id}`;
         item.classList.toggle('active', isActive);
-        item.setAttribute('aria-current', isActive ? 'page' : 'false');
+        if (isActive) {
+          item.setAttribute('aria-current', 'page');
+        } else {
+          item.removeAttribute('aria-current');
+        }
       });
     });
   },
@@ -92,7 +110,18 @@ function updateCarousel(index) {
   if (!isDesktop()) {
     track.style.transform = `translateX(-${currentSlide * 100}%)`;
   } else {
+    currentSlide = 0;
     track.style.transform = 'translateX(0)';
+  }
+}
+
+function setCarouselAutoplay() {
+  if (autoPlayId) {
+    clearInterval(autoPlayId);
+    autoPlayId = null;
+  }
+  if (!prefersReducedMotion && !isDesktop()) {
+    autoPlayId = setInterval(() => updateCarousel(currentSlide + 1), 5000);
   }
 }
 
@@ -100,12 +129,12 @@ document.querySelector('.carousel-prev')?.addEventListener('click', () => update
 document.querySelector('.carousel-next')?.addEventListener('click', () => updateCarousel(currentSlide + 1));
 dots.forEach((dot, index) => dot.addEventListener('click', () => updateCarousel(index)));
 
-if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-  setInterval(() => updateCarousel(currentSlide + 1), 5000);
-}
-
-window.addEventListener('resize', () => updateCarousel(currentSlide));
+window.addEventListener('resize', () => {
+  updateCarousel(currentSlide);
+  setCarouselAutoplay();
+});
 updateCarousel(0);
+setCarouselAutoplay();
 
 document.getElementById('waitlist-form')?.addEventListener('submit', (event) => {
   event.preventDefault();

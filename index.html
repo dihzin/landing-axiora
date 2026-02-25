@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Axiora Path | Sistema Operacional de Evolução Infantil</title>
-  <meta name="description" content="Axiora Path: plataforma gamificada de hábitos, educação financeira e aprendizagem para crianças de 6 a 15 anos, com IA adaptativa Axion e acompanhamento real para pais." />
+  <meta name="description" content="Axiora Path: sistema operacional de evolução infantil para 6 a 15 anos, com trilha adaptativa, métricas de aprendizagem, segurança cognitiva e IA Axion." />
   <meta property="og:title" content="Axiora Path | Seu filho cresce com propósito, todo dia" />
   <meta property="og:description" content="Microvitórias em menos de 3 minutos, progressão visual e métricas reais para a família." />
   <meta property="og:type" content="website" />
@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=dojo6" />
 </head>
 <body>
   <a class="skip-link" href="#main">Ir para o conteúdo</a>
@@ -25,26 +25,30 @@
         <span class="brand-accent">PATH</span>
       </a>
 
-      <button class="hamburger" aria-label="Abrir menu">
+      <button class="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
         <i data-lucide="menu" aria-hidden="true"></i>
       </button>
 
       <ul class="nav-links">
-        <li><a href="#como-funciona">Como funciona</a></li>
-        <li><a href="#beneficios">Benefícios</a></li>
-        <li><a href="#planos">Planos</a></li>
-        <li><a href="#para-escolas">Para escolas</a></li>
+        <li><a href="#como-funciona">Famílias</a></li>
+        <li><a href="#para-escolas">Escolas</a></li>
+        <li><a href="#beneficios">Recursos</a></li>
       </ul>
 
-      <a class="btn btn-primary nav-cta" href="#cta-final" aria-label="Começar grátis no Axiora Path">Começar grátis</a>
+      <div class="nav-right">
+        <a class="lang-link" href="#" aria-label="Selecionar idioma">PT-BR</a>
+        <a class="login-link" href="#" aria-label="Entrar na conta">Entrar</a>
+        <a class="btn btn-primary nav-cta" href="#cta-final" aria-label="Cadastrar gratuitamente no Axiora Path">Cadastre-se</a>
+      </div>
     </nav>
 
-    <div class="mobile-menu" aria-label="Menu mobile">
-      <a href="#como-funciona">Como funciona</a>
-      <a href="#beneficios">Benefícios</a>
+    <div class="mobile-menu" id="mobile-menu" aria-label="Menu mobile">
+      <a href="#como-funciona">Famílias</a>
+      <a href="#beneficios">Recursos</a>
       <a href="#planos">Planos</a>
       <a href="#para-escolas">Para escolas</a>
-      <a class="btn btn-primary" href="#cta-final" aria-label="Começar grátis">Começar grátis</a>
+      <a href="#" aria-label="Entrar">Entrar</a>
+      <a class="btn btn-primary" href="#cta-final" aria-label="Cadastrar">Cadastre-se</a>
     </div>
   </header>
 
@@ -57,9 +61,31 @@
           <span class="chip chip-highlight">Plataforma #1 de evolução infantil com IA adaptativa</span>
           <h1>Seu filho evolui com propósito,<br />hábitos e autonomia em menos de 3 minutos por missão.</h1>
           <p>
-            Para crianças de 6 a 15 anos: rotina, educação financeira e aprendizagem em uma jornada gamificada
-            com reforço positivo e acompanhamento real para pais.
+            Para crianças de 6 a 15 anos: microvitórias em 2–5 minutos, trilha adaptativa não linear, educação
+            financeira prática e acompanhamento com métricas reais de aprendizagem para pais e escola.
           </p>
+          <div class="hero-access-grid" aria-label="Perfis que usam o Axiora">
+            <a class="access-card" href="#cta-final" aria-label="Acesso para professor">
+              <span class="icon-wrap teacher"><i data-lucide="graduation-cap" aria-hidden="true"></i></span>
+              <span>Professor</span>
+              <i data-lucide="arrow-right" aria-hidden="true"></i>
+            </a>
+            <a class="access-card" href="#cta-final" aria-label="Acesso para pai ou mãe">
+              <span class="icon-wrap parent"><i data-lucide="heart-handshake" aria-hidden="true"></i></span>
+              <span>Pai/Mãe</span>
+              <i data-lucide="arrow-right" aria-hidden="true"></i>
+            </a>
+            <a class="access-card" href="#cta-final" aria-label="Acesso para aluno">
+              <span class="icon-wrap student"><i data-lucide="sparkles" aria-hidden="true"></i></span>
+              <span>Aluno</span>
+              <i data-lucide="arrow-right" aria-hidden="true"></i>
+            </a>
+            <a class="access-card" href="#cta-final" aria-label="Acesso para líder escolar">
+              <span class="icon-wrap leader"><i data-lucide="building-2" aria-hidden="true"></i></span>
+              <span>Líder escolar</span>
+              <i data-lucide="arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#cta-final" aria-label="Começar grátis agora">Começar grátis</a>
             <a class="btn btn-secondary" href="#como-funciona" aria-label="Ver como funciona">Ver como funciona</a>
@@ -75,7 +101,7 @@
         </div>
 
         <div class="hero-visual animate-on-scroll">
-          <img src="assets/illustrations/axion-mascot.svg" alt="Mascote Axion representando progresso da criança" width="640" height="420" />
+          <img class="axion-hero-art" src="assets/illustrations/axion.svg" alt="Mascote Axion representando progresso da criança" width="640" height="420" />
           <div class="phone-frame" role="img" aria-label="Exemplo de tela do aplicativo Axiora Path">
             <div class="phone-notch" aria-hidden="true"></div>
             <div class="phone-status">
@@ -114,24 +140,25 @@
         <article class="metric-card animate-on-scroll">
           <i data-lucide="target" aria-hidden="true"></i>
           <h3>6 a 15</h3>
-          <p>Faixa etária coberta com trilhas adaptativas por fase.</p>
+          <p>Faixa etária coberta com trilhas adaptativas por fase de desenvolvimento.</p>
         </article>
         <article class="metric-card animate-on-scroll">
-          <i data-lucide="trending-up" aria-hidden="true"></i>
-          <h3>+70%</h3>
-          <p>Margem bruta projetada no modelo escalável do produto.</p>
+          <i data-lucide="brain-circuit" aria-hidden="true"></i>
+          <h3>R7 / R30</h3>
+          <p>Retenção pedagógica monitorada em 7 e 30 dias para validar aprendizagem real.</p>
         </article>
         <article class="metric-card animate-on-scroll">
-          <i data-lucide="flame" aria-hidden="true"></i>
-          <h3>D30 ≥ 25%</h3>
-          <p>Meta de retenção do MVP com foco em consistência semanal.</p>
+          <i data-lucide="timer" aria-hidden="true"></i>
+          <h3>TTM</h3>
+          <p>Tempo para domínio por habilidade, com checkpoints obrigatórios de maestria.</p>
         </article>
         <article class="metric-card animate-on-scroll">
-          <i data-lucide="shield-check" aria-hidden="true"></i>
-          <h3>3 MVPs</h3>
-          <p>Validações concluídas antes da aceleração de escala.</p>
+          <i data-lucide="activity" aria-hidden="true"></i>
+          <h3>MRR*</h3>
+          <p>Taxa de resolução de lacunas e misconceptions monitorada por trilha.</p>
         </article>
       </div>
+      <p class="metrics-footnote container">*Misconception Resolution Rate (resolução de erros conceituais).</p>
     </section>
 
     <section class="section problem" aria-label="Problemas que o Axiora resolve">
@@ -160,40 +187,59 @@
 
     <section class="section" id="como-funciona" aria-label="Jornada Axiora Path">
       <div class="container">
-        <h2 class="section-title animate-on-scroll">Uma jornada que a criança quer repetir todos os dias.</h2>
-        <div class="journey-grid">
-          <article class="journey-card animate-on-scroll">
-            <span class="chip">Trilhas (Path)</span>
-            <h3>Progressão visual previsível</h3>
-            <p>Unidades com checkpoints claros: feito, atual e próximo passo. Menos fricção e mais continuidade.</p>
-            <img src="assets/illustrations/path-map.svg" loading="lazy" alt="Ilustração de trilha com checkpoints" width="560" height="300" />
-          </article>
-          <article class="journey-card animate-on-scroll">
-            <span class="chip">Missões diárias</span>
-            <h3>Microvitórias em menos de 3 minutos</h3>
-            <p>Tarefas curtas que cabem na rotina real da família e reforçam consistência sem pressão.</p>
-            <ul>
-              <li><i data-lucide="check-circle-2" aria-hidden="true"></i> Ler 10 minutos · +25 XP</li>
-              <li><i data-lucide="check-circle-2" aria-hidden="true"></i> Organizar mochila · +18 XP</li>
-              <li><i data-lucide="check-circle-2" aria-hidden="true"></i> Guardar R$ 2,00 · +30 XP</li>
-            </ul>
-          </article>
-          <article class="journey-card animate-on-scroll">
-            <span class="chip">Economia interna</span>
-            <h3>Educação financeira na prática</h3>
-            <p>XP e Coins viram escolhas reais: comprar agora, poupar para depois ou planejar metas.</p>
-            <div class="economy-list">
-              <p><strong>Skin Astronauta</strong> <span>120 Coins</span></p>
-              <p><strong>Badge Lendário</strong> <span>90 Coins</span></p>
-              <p><strong>Meta de Poupança</strong> <span>Economizando</span></p>
+        <h2 class="section-title animate-on-scroll">Mantendo família, escola e criança conectadas.</h2>
+        <div class="resource-zigzag">
+          <article class="resource-item animate-on-scroll">
+            <div class="resource-media">
+              <img src="assets/illustrations/path-map.svg" loading="lazy" alt="Trilha visual com checkpoints do Axiora Path" width="560" height="300" />
+            </div>
+            <div class="resource-copy">
+              <span class="resource-icon communication"><i data-lucide="messages-square" aria-hidden="true"></i></span>
+              <h3>Comunicação clara entre família e escola</h3>
+              <p>Recados, progresso e próximos passos no mesmo lugar, com linguagem simples e ação imediata.</p>
             </div>
           </article>
-          <article class="journey-card animate-on-scroll">
-            <span class="chip">Pais</span>
-            <h3>Gestão por dados, não por cobrança</h3>
-            <p>Painel com consistência semanal, áreas de atenção e alertas antes da queda de engajamento.</p>
-            <div class="mini-bars" aria-hidden="true">
-              <span style="height:34%"></span><span style="height:58%"></span><span style="height:42%"></span><span style="height:82%"></span><span style="height:66%"></span><span style="height:76%"></span><span style="height:88%"></span>
+
+          <article class="resource-item reverse animate-on-scroll">
+            <div class="resource-media mini-bars-wrap">
+              <div class="mini-bars" aria-hidden="true">
+                <span style="height:34%"></span><span style="height:58%"></span><span style="height:42%"></span><span style="height:82%"></span><span style="height:66%"></span><span style="height:76%"></span><span style="height:88%"></span>
+              </div>
+            </div>
+            <div class="resource-copy">
+              <span class="resource-icon stories"><i data-lucide="camera" aria-hidden="true"></i></span>
+              <h3>Stories de evolução e rotina</h3>
+              <p>Registros curtos de conquistas, hábitos e projetos para acompanhar o desenvolvimento com contexto.</p>
+            </div>
+          </article>
+
+          <article class="resource-item animate-on-scroll">
+            <div class="resource-media">
+              <div class="economy-list">
+                <p><strong>Skin Astronauta</strong> <span>120 Coins</span></p>
+                <p><strong>Badge Lendário</strong> <span>90 Coins</span></p>
+                <p><strong>Meta de Poupança</strong> <span>Economizando</span></p>
+              </div>
+            </div>
+            <div class="resource-copy">
+              <span class="resource-icon behavior"><i data-lucide="coins" aria-hidden="true"></i></span>
+              <h3>Comportamento e finanças em um só sistema</h3>
+              <p>Pontos, XP e Coins criam um ciclo saudável de esforço, recompensa e autonomia financeira.</p>
+            </div>
+          </article>
+
+          <article class="resource-item reverse animate-on-scroll">
+            <div class="resource-media">
+              <ul class="mission-preview">
+                <li><i data-lucide="check-circle-2" aria-hidden="true"></i> Ler 10 minutos · +25 XP</li>
+                <li><i data-lucide="check-circle-2" aria-hidden="true"></i> Organizar mochila · +18 XP</li>
+                <li><i data-lucide="check-circle-2" aria-hidden="true"></i> Guardar R$ 2,00 · +30 XP</li>
+              </ul>
+            </div>
+            <div class="resource-copy">
+              <span class="resource-icon toolkit"><i data-lucide="wrench" aria-hidden="true"></i></span>
+              <h3>Kit de ferramentas para consistência diária</h3>
+              <p>Missões rápidas, trilhas visuais e dashboard de pais para transformar hábitos em rotina previsível.</p>
             </div>
           </article>
         </div>
@@ -203,13 +249,13 @@
     <section class="section axion" aria-label="Motor Axion">
       <div class="container axion-grid">
         <div class="animate-on-scroll">
-          <h2 class="section-title">Axion: IA adaptativa que entende o perfil motivacional da criança</h2>
-          <p class="section-subtitle">Não é chatbot. É motor de decisão que ajusta a jornada em tempo real.</p>
+          <h2 class="section-title">Axion: motor adaptativo de aprendizagem, não chatbot</h2>
+          <p class="section-subtitle">O Axion combina regras pedagógicas e IA para ajustar a jornada em tempo real sem sacrificar qualidade de aprendizagem.</p>
           <ul class="axion-list">
-            <li><i data-lucide="sparkles" aria-hidden="true"></i> Ajusta dificuldade no ritmo certo</li>
-            <li><i data-lucide="sparkles" aria-hidden="true"></i> Recomenda próximo passo com contexto</li>
-            <li><i data-lucide="sparkles" aria-hidden="true"></i> Personaliza reforço positivo por perfil</li>
-            <li><i data-lucide="sparkles" aria-hidden="true"></i> Alerta os pais antes da queda virar problema</li>
+            <li><i data-lucide="sparkles" aria-hidden="true"></i> Recuperação ativa antes de novas explicações</li>
+            <li><i data-lucide="sparkles" aria-hidden="true"></i> Ajuste de dificuldade no flow ideal da criança</li>
+            <li><i data-lucide="sparkles" aria-hidden="true"></i> Revisão espaçada quando há risco de esquecimento</li>
+            <li><i data-lucide="sparkles" aria-hidden="true"></i> Alertas para pais e escola antes da queda de desempenho</li>
           </ul>
         </div>
         <aside class="axion-profile animate-on-scroll" aria-label="Exemplo de perfil analisado pelo Axion">
@@ -219,9 +265,70 @@
             <span>Consistência: 78%</span>
             <span>Foco: Finanças</span>
           </div>
-          <p><strong>Recomendação do Axion:</strong> Missão curta de poupança + leitura para manter streak de 12 dias.</p>
+          <p><strong>Recomendação do Axion:</strong> desafio de recuperação de 3 minutos + missão de poupança para consolidar domínio sem sobrecarga.</p>
           <button class="btn btn-ghost" aria-label="Simular recomendação Axion">Simular próxima missão</button>
         </aside>
+      </div>
+    </section>
+
+    <section class="section ctm" aria-label="Como o Axion decide">
+      <div class="container">
+        <h2 class="section-title animate-on-scroll">Como o Axion decide o próximo passo</h2>
+        <p class="section-subtitle animate-on-scroll">Cada criança é modelada como um Cognitive Twin dinâmico para maximizar aprendizagem com segurança emocional.</p>
+        <div class="ctm-grid">
+          <article class="ctm-card animate-on-scroll">
+            <i data-lucide="target" aria-hidden="true"></i>
+            <h3>Domínio por habilidade</h3>
+            <p>Mapa de competências com dependências e pontos críticos em risco.</p>
+          </article>
+          <article class="ctm-card animate-on-scroll">
+            <i data-lucide="refresh-cw" aria-hidden="true"></i>
+            <h3>Memória e retenção</h3>
+            <p>Probabilidade de esquecimento ativa revisões espaçadas no momento certo.</p>
+          </article>
+          <article class="ctm-card animate-on-scroll">
+            <i data-lucide="activity" aria-hidden="true"></i>
+            <h3>Ritmo cognitivo</h3>
+            <p>Velocidade de processamento, tolerância à frustração e janela de flow.</p>
+          </article>
+          <article class="ctm-card animate-on-scroll">
+            <i data-lucide="heart" aria-hidden="true"></i>
+            <h3>Sinais afetivos</h3>
+            <p>Confiança, ansiedade e esforço para reforçar progresso sem pressão.</p>
+          </article>
+        </div>
+        <div class="brain-path animate-on-scroll" aria-label="Fluxo de decisão do Brain Path">
+          <span>Detecta lacuna</span>
+          <i data-lucide="arrow-right" aria-hidden="true"></i>
+          <span>Micromissão 2–5 min</span>
+          <i data-lucide="arrow-right" aria-hidden="true"></i>
+          <span>Checkpoint de domínio</span>
+          <i data-lucide="arrow-right" aria-hidden="true"></i>
+          <span>Próximo passo adaptativo</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section safety" aria-label="Segurança cognitiva e neurodiversidade">
+      <div class="container">
+        <h2 class="section-title animate-on-scroll">Segurança cognitiva em primeiro lugar</h2>
+        <div class="safety-grid">
+          <article class="safety-card animate-on-scroll">
+            <i data-lucide="shield-check" aria-hidden="true"></i>
+            <h3>Gamificação não viciante</h3>
+            <p>Sem loops compulsivos e sem inflação de XP sem evidência de domínio.</p>
+          </article>
+          <article class="safety-card animate-on-scroll">
+            <i data-lucide="brain" aria-hidden="true"></i>
+            <h3>Neurodiversidade ativa</h3>
+            <p>Modos para TDAH, leitura amigável para dislexia e trilhas de baixa ansiedade.</p>
+          </article>
+          <article class="safety-card animate-on-scroll">
+            <i data-lucide="clock-3" aria-hidden="true"></i>
+            <h3>Tempo de tela com propósito</h3>
+            <p>Sessões curtas e objetivas com foco em aprendizagem transferível para a vida real.</p>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -294,7 +401,7 @@
           <div class="school-benefits">
             <p><i data-lucide="graduation-cap" aria-hidden="true"></i> Dashboards por turma com evolução individual</p>
             <p><i data-lucide="book-open-check" aria-hidden="true"></i> Sugestões de intervenção para docentes</p>
-            <p><i data-lucide="line-chart" aria-hidden="true"></i> Relatórios para coordenação e projetos socioemocionais</p>
+            <p><i data-lucide="trending-up" aria-hidden="true"></i> Relatórios para coordenação e projetos socioemocionais</p>
           </div>
           <div class="pilot-steps">
             <h3>Piloto 60–90 dias</h3>
@@ -307,6 +414,19 @@
           <a class="btn btn-primary" href="#cta-final" aria-label="Levar Axiora Path para minha escola">Quero levar para minha escola</a>
         </div>
         <img class="animate-on-scroll" src="assets/illustrations/school-pilot.svg" loading="lazy" alt="Fluxo de piloto escolar em três etapas" width="560" height="300" />
+      </div>
+    </section>
+
+    <section class="section tenants" aria-label="Ambientes separados por perfil">
+      <div class="container">
+        <h2 class="section-title animate-on-scroll">Ambientes separados e seguros por perfil</h2>
+        <p class="section-subtitle animate-on-scroll">Família e escola operam no mesmo ecossistema, com permissões e dados isolados por papel.</p>
+        <div class="tenant-grid">
+          <article class="tenant-card animate-on-scroll"><i data-lucide="user" aria-hidden="true"></i><h3>Criança</h3><p>Missões, trilhas e reforço positivo adequados à faixa etária.</p></article>
+          <article class="tenant-card animate-on-scroll"><i data-lucide="users" aria-hidden="true"></i><h3>Pais</h3><p>Visão de consistência, alertas e decisões de rotina sem microgerenciar.</p></article>
+          <article class="tenant-card animate-on-scroll"><i data-lucide="graduation-cap" aria-hidden="true"></i><h3>Professores</h3><p>Indicadores de turma e intervenções simples baseadas em dados.</p></article>
+          <article class="tenant-card animate-on-scroll"><i data-lucide="shield-check" aria-hidden="true"></i><h3>Coordenação/Admin</h3><p>Governança, compliance LGPD e visão consolidada por unidade.</p></article>
+        </div>
       </div>
     </section>
 
@@ -347,6 +467,14 @@
             <button class="carousel-dot" aria-label="Ir para depoimento 3"></button>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="section privacy" aria-label="Privacidade">
+      <div class="container privacy-box animate-on-scroll">
+        <h2 class="section-title">Privacidade em primeiro lugar — sempre</h2>
+        <p class="section-subtitle">Dados protegidos por padrão, com consentimento parental, minimização de coleta e transparência total.</p>
+        <a class="privacy-link" href="#" aria-label="Acessar central de privacidade">Conhecer a Central de Privacidade</a>
       </div>
     </section>
 
@@ -444,7 +572,8 @@
     <div class="footer-bottom">© 2026 Axiora Path. Todos os direitos reservados.</div>
   </footer>
 
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <script src="script.js"></script>
+  <script src="https://unpkg.com/lucide@0.469.0"></script>
+  <script src="script.js?v=dojo6"></script>
 </body>
 </html>
+
