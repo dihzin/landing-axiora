@@ -144,6 +144,49 @@ document.getElementById('waitlist-form')?.addEventListener('submit', (event) => 
   if (success) success.style.display = 'block';
 });
 
+const axionStates = [
+  {
+    progress: 78,
+    status: 'Estavel',
+    statusClass: 'status-ok',
+    recommendation: 'recuperacao de 3 minutos + missao de poupanca.',
+  },
+  {
+    progress: 84,
+    status: 'Em alta',
+    statusClass: 'status-ok',
+    recommendation: 'missao avancada de foco com bonus de consistencia.',
+  },
+  {
+    progress: 71,
+    status: 'Oscilando',
+    statusClass: 'status-alert',
+    recommendation: 'micro desafio de retomada com reforco visual.',
+  },
+];
+
+let axionStateIndex = 0;
+const axionProgressLabel = document.getElementById('axion-progress-label');
+const axionProgressBar = document.getElementById('axion-progress-bar');
+const axionFocusStatus = document.getElementById('axion-focus-status');
+const axionRecommendation = document.getElementById('axion-recommendation');
+const axionSimulate = document.getElementById('axion-simulate');
+
+axionSimulate?.addEventListener('click', () => {
+  axionStateIndex = (axionStateIndex + 1) % axionStates.length;
+  const state = axionStates[axionStateIndex];
+  if (axionProgressLabel) axionProgressLabel.textContent = `${state.progress}%`;
+  if (axionProgressBar) axionProgressBar.style.width = `${state.progress}%`;
+  if (axionFocusStatus) {
+    axionFocusStatus.textContent = state.status;
+    axionFocusStatus.classList.remove('status-ok', 'status-alert');
+    axionFocusStatus.classList.add(state.statusClass);
+  }
+  if (axionRecommendation) {
+    axionRecommendation.innerHTML = `<strong>Proxima missao:</strong> ${state.recommendation}`;
+  }
+});
+
 const revealObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {

@@ -9,15 +9,15 @@
   <meta property="og:description" content="Microvitórias em menos de 3 minutos, progressão visual e métricas reais para a família." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://dihzin.github.io/landing-axiora/" />
-  <meta property="og:image" content="https://dihzin.github.io/landing-axiora/assets/app/tela%20inicial.png" />
+  <meta property="og:image" content="https://dihzin.github.io/landing-axiora/assets/app/tela%20inicial-1440.webp" />
   <meta property="og:site_name" content="Axiora Path" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content="https://dihzin.github.io/landing-axiora/assets/app/tela%20inicial.png" />
-  <link rel="canonical" href="https://axiorapath.com.br" />
+  <meta name="twitter:image" content="https://dihzin.github.io/landing-axiora/assets/app/tela%20inicial-1440.webp" />
+  <link rel="canonical" href="https://dihzin.github.io/landing-axiora/" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Quicksand:wght@600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=spark5" />
+  <link rel="stylesheet" href="styles.css" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -25,11 +25,7 @@
     "name": "Axiora Path",
     "url": "https://dihzin.github.io/landing-axiora/",
     "logo": "https://dihzin.github.io/landing-axiora/assets/illustrations/axion.svg",
-    "sameAs": [
-      "https://instagram.com",
-      "https://youtube.com",
-      "https://linkedin.com"
-    ]
+    "sameAs": []
   }
   </script>
   <script type="application/ld+json">
@@ -172,14 +168,25 @@
         <div class="hero-visual animate-on-scroll">
           <img class="axion-hero-art" src="assets/illustrations/axion.svg" alt="Mascote Axion representando progresso da criança" width="640" height="420" />
           <div class="phone-frame real-app-frame">
-            <img
-              class="phone-screen-real"
-              src="assets/app/tela inicial.png"
-              alt="Tela real inicial do aplicativo Axiora Path"
-              width="1920"
-              height="911"
-              loading="lazy"
-            />
+            <picture>
+              <source
+                type="image/webp"
+                srcset="
+                  assets/app/tela%20inicial-960.webp 960w,
+                  assets/app/tela%20inicial-1440.webp 1440w
+                "
+                sizes="(min-width: 768px) 44vw, 92vw"
+              />
+              <img
+                class="phone-screen-real"
+                src="assets/app/tela%20inicial.png"
+                alt="Tela real inicial do aplicativo Axiora Path"
+                width="1920"
+                height="911"
+                loading="eager"
+                fetchpriority="high"
+              />
+            </picture>
           </div>
         </div>
       </div>
@@ -188,11 +195,11 @@
     <section class="section trust-strip" aria-label="Prova social e credibilidade">
       <div class="container trust-grid">
         <div class="trust-logos">
-          <span>Usado por famílias de:</span>
-          <p>Escola Horizonte</p>
-          <p>Colégio Prisma</p>
-          <p>Rede Vila Nova</p>
-          <p>Núcleo Aprender+</p>
+          <span>Preparado para implantação em:</span>
+          <p>Escolas particulares</p>
+          <p>Redes municipais</p>
+          <p>Projetos socioemocionais</p>
+          <p>Programas de contraturno</p>
         </div>
         <div class="trust-kpi">
           <strong>+2.400</strong>
@@ -257,9 +264,19 @@
         <span class="section-eyebrow animate-on-scroll">Jornada adaptativa</span>
         <h2 class="section-title animate-on-scroll">Mantendo família, escola e criança conectadas.</h2>
         <div class="resource-zigzag">
-          <article class="resource-item animate-on-scroll">
+          <article class="resource-item featured animate-on-scroll">
             <div class="resource-media">
-              <img src="assets/app/tela trilha.png" loading="lazy" alt="Tela real da trilha adaptativa no Axiora Path" width="1920" height="911" />
+              <picture>
+                <source
+                  type="image/webp"
+                  srcset="
+                    assets/app/tela%20trilha-960.webp 960w,
+                    assets/app/tela%20trilha-1440.webp 1440w
+                  "
+                  sizes="(min-width: 768px) 46vw, 96vw"
+                />
+                <img src="assets/app/tela%20trilha.png" loading="lazy" alt="Tela real da trilha adaptativa no Axiora Path" width="1920" height="911" />
+              </picture>
             </div>
             <div class="resource-copy">
               <span class="resource-icon communication"><i data-lucide="messages-square" aria-hidden="true"></i></span>
@@ -268,9 +285,19 @@
             </div>
           </article>
 
-          <article class="resource-item reverse animate-on-scroll">
+          <article class="resource-item compact compact-stories animate-on-scroll">
             <div class="resource-media">
-              <img src="assets/app/tela jogos.png" loading="lazy" alt="Tela real da area de jogos e missoes do Axiora Path" width="1920" height="911" />
+              <picture>
+                <source
+                  type="image/webp"
+                  srcset="
+                    assets/app/tela%20jogos-960.webp 960w,
+                    assets/app/tela%20jogos-1440.webp 1440w
+                  "
+                  sizes="(min-width: 768px) 46vw, 96vw"
+                />
+                <img src="assets/app/tela%20jogos.png" loading="lazy" alt="Tela real da area de jogos e missoes do Axiora Path" width="1920" height="911" />
+              </picture>
             </div>
             <div class="resource-copy">
               <span class="resource-icon stories"><i data-lucide="camera" aria-hidden="true"></i></span>
@@ -279,9 +306,19 @@
             </div>
           </article>
 
-          <article class="resource-item animate-on-scroll">
+          <article class="resource-item compact compact-finance animate-on-scroll">
             <div class="resource-media">
-              <img src="assets/app/tela figurinhas.png" loading="lazy" alt="Tela real de figurinhas e recompensas do Axiora Path" width="1920" height="911" />
+              <picture>
+                <source
+                  type="image/webp"
+                  srcset="
+                    assets/app/tela%20figurinhas-960.webp 960w,
+                    assets/app/tela%20figurinhas-1440.webp 1440w
+                  "
+                  sizes="(min-width: 768px) 46vw, 96vw"
+                />
+                <img src="assets/app/tela%20figurinhas.png" loading="lazy" alt="Tela real de figurinhas e recompensas do Axiora Path" width="1920" height="911" />
+              </picture>
             </div>
             <div class="resource-copy">
               <span class="resource-icon behavior"><i data-lucide="coins" aria-hidden="true"></i></span>
@@ -290,14 +327,29 @@
             </div>
           </article>
 
-          <article class="resource-item reverse animate-on-scroll">
-            <div class="resource-media">
-              <img src="assets/app/tela axion.png" loading="lazy" alt="Tela real com funcionalidades do Axion no Axiora Path" width="1920" height="911" />
-            </div>
-            <div class="resource-copy">
+          <article class="journey-timeline animate-on-scroll">
+            <div class="journey-copy">
               <span class="resource-icon toolkit"><i data-lucide="wrench" aria-hidden="true"></i></span>
-              <h3>Kit de ferramentas para consistência diária</h3>
-              <p>Missões rápidas, trilhas visuais e dashboard de pais para transformar hábitos em rotina previsível.</p>
+              <h3>Rota de consistência em 3 checkpoints</h3>
+              <p>Uma sequência guiada que transforma intenção em rotina previsível para família e escola.</p>
+              <ol class="timeline-steps">
+                <li><strong>Checkpoint 1:</strong> alinhamento rápido com contexto da criança.</li>
+                <li><strong>Checkpoint 2:</strong> micromissão prática no timing ideal.</li>
+                <li><strong>Checkpoint 3:</strong> validação de domínio e próximo passo.</li>
+              </ol>
+            </div>
+            <div class="journey-media">
+              <picture>
+                <source
+                  type="image/webp"
+                  srcset="
+                    assets/app/tela%20axion-960.webp 960w,
+                    assets/app/tela%20axion-1440.webp 1440w
+                  "
+                  sizes="(min-width: 768px) 46vw, 96vw"
+                />
+                <img src="assets/app/tela%20axion.png" loading="lazy" alt="Tela real com funcionalidades do Axion no Axiora Path" width="1920" height="911" />
+              </picture>
             </div>
           </article>
         </div>
@@ -309,31 +361,65 @@
         <div class="animate-on-scroll">
           <span class="section-eyebrow">Coach Axion</span>
           <h2 class="section-title">Axion transforma dados em decisões simples para a rotina</h2>
-          <p class="section-subtitle">Sem painel técnico complexo: ele mostra o próximo melhor passo para a criança, para a família e para a escola.</p>
-          <div class="axion-steps">
+          <p class="section-subtitle">Diagnóstico rápido, ação curta e confirmação de domínio em uma única trilha visual.</p>
+
+          <div class="axion-flow" aria-label="Fluxo visual de decisão do Axion">
+            <article class="flow-step">
+              <i data-lucide="radar" aria-hidden="true"></i>
+              <h3>Lê sinais</h3>
+              <p>Consistência, foco e retenção.</p>
+            </article>
+            <i class="flow-arrow" data-lucide="arrow-right" aria-hidden="true"></i>
+            <article class="flow-step">
+              <i data-lucide="wand" aria-hidden="true"></i>
+              <h3>Ajusta missão</h3>
+              <p>Desafio certo sem frustração.</p>
+            </article>
+            <i class="flow-arrow" data-lucide="arrow-right" aria-hidden="true"></i>
+            <article class="flow-step">
+              <i data-lucide="flag" aria-hidden="true"></i>
+              <h3>Confirma avanço</h3>
+              <p>Próximo passo liberado.</p>
+            </article>
+          </div>
+
+          <div class="axion-insights" aria-label="Indicadores rápidos do Axion">
             <article>
-              <span>1</span>
-              <p><strong>Lê sinais reais</strong> de consistência, foco e retenção.</p>
+              <strong>+12%</strong>
+              <span>consistência semanal</span>
             </article>
             <article>
-              <span>2</span>
-              <p><strong>Ajusta a missão</strong> para manter desafio sem frustração.</p>
+              <strong>3 min</strong>
+              <span>tempo médio por missão</span>
             </article>
             <article>
-              <span>3</span>
-              <p><strong>Entrega orientação prática</strong> para família e escola agirem rápido.</p>
+              <strong>-28%</strong>
+              <span>queda em conflitos diários</span>
             </article>
           </div>
         </div>
         <aside class="axion-profile animate-on-scroll" aria-label="Exemplo de perfil analisado pelo Axion">
-          <h3>Perfil Lucas (9 anos)</h3>
+          <h3>Painel do Axion | Lucas (9 anos)</h3>
           <div class="profile-tags">
             <span>Motivação: Visual</span>
             <span>Consistência: 78%</span>
             <span>Foco: Finanças</span>
           </div>
-          <p><strong>Recomendação do Axion:</strong> desafio de recuperação de 3 minutos + missão de poupança para consolidar domínio sem sobrecarga.</p>
-          <button class="btn btn-ghost" aria-label="Simular recomendação Axion">Simular próxima missão</button>
+          <div class="axion-dashboard">
+            <div class="dash-row">
+              <span>Domínio da habilidade</span>
+              <strong id="axion-progress-label">78%</strong>
+            </div>
+            <div class="dash-progress" aria-hidden="true">
+              <span id="axion-progress-bar"></span>
+            </div>
+            <div class="dash-row">
+              <span>Status de foco</span>
+              <strong id="axion-focus-status" class="status-ok">Estável</strong>
+            </div>
+            <p id="axion-recommendation"><strong>Próxima missão:</strong> recuperação de 3 minutos + missão de poupança.</p>
+          </div>
+          <button id="axion-simulate" class="btn btn-ghost" aria-label="Simular recomendação Axion">Simular próxima missão</button>
         </aside>
       </div>
     </section>
@@ -477,7 +563,17 @@
           </div>
           <a class="btn btn-primary" href="#cta-final" aria-label="Levar Axiora Path para minha escola">Quero levar para minha escola</a>
         </div>
-        <img class="animate-on-scroll school-app-shot" src="assets/app/tela login.png" loading="lazy" alt="Tela real de login e acesso institucional do Axiora Path" width="1920" height="911" />
+        <picture class="animate-on-scroll school-app-shot">
+          <source
+            type="image/webp"
+            srcset="
+              assets/app/tela%20login-960.webp 960w,
+              assets/app/tela%20login-1440.webp 1440w
+            "
+            sizes="(min-width: 768px) 46vw, 96vw"
+          />
+          <img src="assets/app/tela%20login.png" loading="lazy" alt="Tela real de login e acesso institucional do Axiora Path" width="1920" height="911" />
+        </picture>
       </div>
     </section>
 
@@ -592,6 +688,10 @@
             <label for="child-name">Nome do filho (opcional)</label>
             <input id="child-name" type="text" placeholder="Nome do filho" />
           </div>
+          <label class="consent-row" for="consent-lgpd">
+            <input id="consent-lgpd" type="checkbox" required />
+            <span>Concordo com a política de privacidade e o uso de dados conforme LGPD.</span>
+          </label>
           <button class="btn btn-primary" type="submit" aria-label="Entrar na lista de espera">Entrar na lista com acesso fundador</button>
         </form>
 
@@ -615,10 +715,9 @@
         </a>
         <p class="footer-tagline">O Sistema Operacional de Evolução Infantil.</p>
         <div class="socials">
-          <a href="#" aria-label="Instagram"><i data-lucide="instagram" aria-hidden="true"></i></a>
-          <a href="#" aria-label="TikTok"><i data-lucide="music-2" aria-hidden="true"></i></a>
-          <a href="#" aria-label="YouTube"><i data-lucide="youtube" aria-hidden="true"></i></a>
-          <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin" aria-hidden="true"></i></a>
+          <span class="social-coming-soon"><i data-lucide="instagram" aria-hidden="true"></i> Instagram em breve</span>
+          <span class="social-coming-soon"><i data-lucide="youtube" aria-hidden="true"></i> YouTube em breve</span>
+          <span class="social-coming-soon"><i data-lucide="linkedin" aria-hidden="true"></i> LinkedIn em breve</span>
         </div>
       </div>
       <div>
@@ -647,7 +746,6 @@
   </footer>
 
   <script src="https://unpkg.com/lucide@0.469.0"></script>
-  <script src="script.js?v=spark1"></script>
+  <script src="script.js"></script>
 </body>
 </html>
-
