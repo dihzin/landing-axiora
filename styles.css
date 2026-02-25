@@ -962,6 +962,13 @@ a {
   color: var(--ink-700);
 }
 
+.metrics-footnote {
+  margin-top: 16px;
+  position: relative;
+  z-index: 1;
+  font-size: 0.88rem;
+}
+
 .pricing-card ul {
   list-style: none;
   margin: 0 0 14px;
@@ -1240,7 +1247,20 @@ a {
   gap: 10px;
 }
 
+.form-field {
+  display: grid;
+  gap: 5px;
+}
+
+.form-field label {
+  color: #dcebff;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+}
+
 #waitlist-form input {
+  width: 100%;
   min-height: 48px;
   border-radius: 14px;
   border: 2px solid rgba(255, 255, 255, 0.35);
@@ -1252,6 +1272,10 @@ a {
 
 #waitlist-form input::placeholder {
   color: #d5e5ff;
+}
+
+.optional-field {
+  display: none;
 }
 
 .success-message {
@@ -1368,6 +1392,10 @@ a {
 
   .trust-kpi {
     justify-self: end;
+  }
+
+  .optional-field {
+    display: grid;
   }
 
   .hero.section {
