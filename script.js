@@ -38,7 +38,9 @@ const navObserver = new IntersectionObserver(
     entries.forEach((entry) => {
       if (!entry.isIntersecting) return;
       navItems.forEach((item) => {
-        item.classList.toggle('active', item.getAttribute('href') === `#${entry.target.id}`);
+        const isActive = item.getAttribute('href') === `#${entry.target.id}`;
+        item.classList.toggle('active', isActive);
+        item.setAttribute('aria-current', isActive ? 'page' : 'false');
       });
     });
   },
