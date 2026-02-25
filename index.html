@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=dojo9" />
+  <link rel="stylesheet" href="styles.css?v=dojo10" />
 </head>
 <body>
   <a class="skip-link" href="#main">Ir para o conteúdo</a>
@@ -102,34 +102,15 @@
 
         <div class="hero-visual animate-on-scroll">
           <img class="axion-hero-art" src="assets/illustrations/axion.svg" alt="Mascote Axion representando progresso da criança" width="640" height="420" />
-          <div class="phone-frame" role="img" aria-label="Exemplo de tela do aplicativo Axiora Path">
-            <div class="phone-notch" aria-hidden="true"></div>
-            <div class="phone-status">
-              <span>9:41</span>
-              <span>Wi-Fi · 84%</span>
-            </div>
-            <div class="phone-card">
-              <p class="phone-title">Trilha: Disciplina e Autonomia</p>
-              <div class="trail-mini">
-                <span class="done"></span><span class="done"></span><span class="done"></span><span class="active"></span><span></span><span></span>
-              </div>
-            </div>
-            <div class="phone-card">
-              <p class="phone-title">Missão de hoje</p>
-              <p class="phone-subtitle">Economizar R$ 5,00 · +47 XP</p>
-              <p class="mini-btn" aria-hidden="true">Iniciar</p>
-            </div>
-            <div class="phone-card">
-              <div class="phone-row">
-                <strong>Lucas, 9 anos</strong>
-                <span>🔥 12 dias</span>
-              </div>
-              <div class="xp-track"><span></span></div>
-              <div class="phone-row soft">
-                <small>Coins: 220</small>
-                <small>Nível 4</small>
-              </div>
-            </div>
+          <div class="phone-frame real-app-frame">
+            <img
+              class="phone-screen-real"
+              src="assets/app/tela inicial.png"
+              alt="Tela real inicial do aplicativo Axiora Path"
+              width="1920"
+              height="911"
+              loading="lazy"
+            />
           </div>
         </div>
       </div>
@@ -190,10 +171,28 @@
       <div class="container">
         <span class="section-eyebrow animate-on-scroll">Jornada adaptativa</span>
         <h2 class="section-title animate-on-scroll">Mantendo família, escola e criança conectadas.</h2>
+        <svg class="treasure-trail" viewBox="0 0 1200 1300" aria-hidden="true" focusable="false">
+          <defs>
+            <linearGradient id="trailGold" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#ffd37a" />
+              <stop offset="55%" stop-color="#ffb24a" />
+              <stop offset="100%" stop-color="#ff7f36" />
+            </linearGradient>
+            <filter id="trailGlow" x="-20%" y="-20%" width="140%" height="140%">
+              <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#ffad49" flood-opacity="0.45" />
+            </filter>
+          </defs>
+
+          <path id="trail-route-path" class="trail-path"
+            d="M600 130 C760 130 760 260 600 260 C440 260 440 390 600 390 C760 390 760 520 600 520 C440 520 440 650 600 650 C760 650 760 780 600 780 C440 780 440 910 600 910 C760 910 760 1040 600 1040 C440 1040 440 1170 600 1170"
+          />
+          <g class="trail-nodes"></g>
+          <g class="trail-runners"></g>
+        </svg>
         <div class="resource-zigzag">
           <article class="resource-item animate-on-scroll">
             <div class="resource-media">
-              <img src="assets/illustrations/path-map.svg" loading="lazy" alt="Trilha visual com checkpoints do Axiora Path" width="560" height="300" />
+              <img src="assets/app/tela trilha.png" loading="lazy" alt="Tela real da trilha adaptativa no Axiora Path" width="1920" height="911" />
             </div>
             <div class="resource-copy">
               <span class="resource-icon communication"><i data-lucide="messages-square" aria-hidden="true"></i></span>
@@ -203,10 +202,8 @@
           </article>
 
           <article class="resource-item reverse animate-on-scroll">
-            <div class="resource-media mini-bars-wrap">
-              <div class="mini-bars" aria-hidden="true">
-                <span style="height:34%"></span><span style="height:58%"></span><span style="height:42%"></span><span style="height:82%"></span><span style="height:66%"></span><span style="height:76%"></span><span style="height:88%"></span>
-              </div>
+            <div class="resource-media">
+              <img src="assets/app/tela jogos.png" loading="lazy" alt="Tela real da area de jogos e missoes do Axiora Path" width="1920" height="911" />
             </div>
             <div class="resource-copy">
               <span class="resource-icon stories"><i data-lucide="camera" aria-hidden="true"></i></span>
@@ -217,11 +214,7 @@
 
           <article class="resource-item animate-on-scroll">
             <div class="resource-media">
-              <div class="economy-list">
-                <p><strong>Skin Astronauta</strong> <span>120 Coins</span></p>
-                <p><strong>Badge Lendário</strong> <span>90 Coins</span></p>
-                <p><strong>Meta de Poupança</strong> <span>Economizando</span></p>
-              </div>
+              <img src="assets/app/tela figurinhas.png" loading="lazy" alt="Tela real de figurinhas e recompensas do Axiora Path" width="1920" height="911" />
             </div>
             <div class="resource-copy">
               <span class="resource-icon behavior"><i data-lucide="coins" aria-hidden="true"></i></span>
@@ -232,11 +225,7 @@
 
           <article class="resource-item reverse animate-on-scroll">
             <div class="resource-media">
-              <ul class="mission-preview">
-                <li><i data-lucide="check-circle-2" aria-hidden="true"></i> Ler 10 minutos · +25 XP</li>
-                <li><i data-lucide="check-circle-2" aria-hidden="true"></i> Organizar mochila · +18 XP</li>
-                <li><i data-lucide="check-circle-2" aria-hidden="true"></i> Guardar R$ 2,00 · +30 XP</li>
-              </ul>
+              <img src="assets/app/tela axion.png" loading="lazy" alt="Tela real com funcionalidades do Axion no Axiora Path" width="1920" height="911" />
             </div>
             <div class="resource-copy">
               <span class="resource-icon toolkit"><i data-lucide="wrench" aria-hidden="true"></i></span>
@@ -419,7 +408,7 @@
           </div>
           <a class="btn btn-primary" href="#cta-final" aria-label="Levar Axiora Path para minha escola">Quero levar para minha escola</a>
         </div>
-        <img class="animate-on-scroll" src="assets/illustrations/school-pilot.svg" loading="lazy" alt="Fluxo de piloto escolar em três etapas" width="560" height="300" />
+        <img class="animate-on-scroll school-app-shot" src="assets/app/tela login.png" loading="lazy" alt="Tela real de login e acesso institucional do Axiora Path" width="1920" height="911" />
       </div>
     </section>
 
@@ -580,7 +569,7 @@
   </footer>
 
   <script src="https://unpkg.com/lucide@0.469.0"></script>
-  <script src="script.js?v=dojo9"></script>
+  <script src="script.js?v=dojo13"></script>
 </body>
 </html>
 

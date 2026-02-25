@@ -680,7 +680,15 @@ p {
   border-radius: 16px;
   background: linear-gradient(180deg, #f7fbff, #eef5ff);
   border: 1px solid #dbe8fb;
-  padding: 14px;
+  padding: 0;
+  overflow: hidden;
+}
+
+.resource-media img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1920 / 911;
+  object-fit: cover;
 }
 
 .resource-copy h3 {
@@ -2058,6 +2066,12 @@ body {
   box-shadow: 0 16px 28px rgba(18, 51, 102, 0.16);
 }
 
+.school-app-shot {
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: 1920 / 911;
+}
+
 .testimonial-card {
   border-radius: 20px;
   border: 1px solid #d9e5fb;
@@ -2467,4 +2481,161 @@ body {
 .tenants .tenant-card h3,
 .safety .safety-card h3 {
   font-size: 1.2rem;
+}
+
+/* Hero real app screenshot without distortion */
+.phone-frame.real-app-frame {
+  width: min(560px, 96%);
+  padding: 10px;
+  border-radius: 24px;
+  border: 1px solid rgba(138, 174, 235, 0.56);
+  background: rgba(12, 29, 61, 0.82);
+  transform: none;
+}
+
+.phone-frame.real-app-frame .phone-notch,
+.phone-frame.real-app-frame .phone-status {
+  display: none;
+}
+
+.phone-screen-real {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  border-radius: 16px;
+}
+
+.hero-visual .axion-hero-art {
+  width: min(220px, 48%);
+  max-width: 220px;
+  margin-bottom: -6px;
+}
+
+@media (min-width: 768px) {
+  .hero-visual .axion-hero-art {
+    width: min(240px, 46%);
+    max-width: 240px;
+  }
+
+  .phone-frame.real-app-frame {
+    width: min(620px, 98%);
+  }
+}
+
+/* Jornada: less stacked-card feel + clearer app screenshots */
+#como-funciona .container {
+  position: relative;
+}
+
+#como-funciona .resource-zigzag {
+  gap: 34px;
+  position: relative;
+  z-index: 1;
+}
+
+#como-funciona .resource-item {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
+  gap: 22px;
+  position: relative;
+}
+
+#como-funciona .resource-media {
+  background: linear-gradient(165deg, #1a4276, #1f4f8e);
+  border: 1px solid rgba(176, 206, 250, 0.28);
+  border-radius: 18px;
+  padding: 6px;
+  box-shadow:
+    0 10px 22px rgba(17, 44, 91, 0.16),
+    0 1px 0 rgba(255, 255, 255, 0.16) inset;
+}
+
+#como-funciona .resource-media img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1920 / 911;
+  object-fit: contain;
+  border-radius: 12px;
+  background: #f4f8ff;
+}
+
+#como-funciona .resource-copy {
+  align-self: center;
+}
+
+.treasure-trail {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .treasure-trail {
+    display: block;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .trail-path {
+    fill: none;
+    stroke: url(#trailGold);
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 8 9;
+    filter: url(#trailGlow);
+    animation: trailFlow 12s linear infinite;
+    opacity: 0.88;
+  }
+
+  .trail-node {
+    fill: rgba(255, 196, 92, 0.38);
+    stroke: rgba(255, 243, 205, 0.5);
+    stroke-width: 1;
+    filter: drop-shadow(0 0 4px rgba(255, 181, 83, 0.28));
+    animation: nodePulse 3.1s ease-in-out infinite;
+  }
+
+  .trail-node-minor {
+    fill: rgba(255, 191, 99, 0.34);
+    stroke: rgba(255, 242, 212, 0.52);
+    stroke-width: 1;
+    filter: drop-shadow(0 0 3px rgba(255, 173, 73, 0.24));
+    opacity: 0.72;
+  }
+
+  .trail-runner {
+    fill: #ffd46f;
+    stroke: #fff2c4;
+    stroke-width: 1.5;
+    filter: drop-shadow(0 0 10px rgba(255, 183, 71, 0.7));
+  }
+
+  #como-funciona .resource-item {
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+    gap: 30px;
+  }
+}
+
+@keyframes trailFlow {
+  to {
+    stroke-dashoffset: -72;
+  }
+}
+
+@keyframes nodePulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
 }
