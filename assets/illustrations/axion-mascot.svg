@@ -1,0 +1,30 @@
+<svg width="640" height="420" viewBox="0 0 640 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="40" y1="30" x2="590" y2="390" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#B9E7FF"/>
+      <stop offset="1" stop-color="#E4FFE8"/>
+    </linearGradient>
+    <linearGradient id="body" x1="262" y1="140" x2="384" y2="318" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#57C8FF"/>
+      <stop offset="1" stop-color="#49E282"/>
+    </linearGradient>
+  </defs>
+  <rect x="26" y="24" width="588" height="372" rx="36" fill="url(#bg)"/>
+  <circle cx="127" cy="86" r="26" fill="#FFD166"/>
+  <circle cx="522" cy="92" r="19" fill="#FF9F1C"/>
+  <ellipse cx="321" cy="348" rx="136" ry="20" fill="#0A1F4426"/>
+  <rect x="236" y="112" width="170" height="190" rx="64" fill="url(#body)"/>
+  <circle cx="289" cy="188" r="22" fill="white"/>
+  <circle cx="351" cy="188" r="22" fill="white"/>
+  <circle cx="290" cy="189" r="9" fill="#0A1F44"/>
+  <circle cx="350" cy="189" r="9" fill="#0A1F44"/>
+  <path d="M283 233C300 252 341 252 358 233" stroke="#0A1F44" stroke-width="9" stroke-linecap="round"/>
+  <path d="M225 163C194 175 192 205 213 222" stroke="#FFD166" stroke-width="12" stroke-linecap="round"/>
+  <path d="M418 162C449 174 452 205 430 221" stroke="#FFD166" stroke-width="12" stroke-linecap="round"/>
+  <rect x="260" y="70" width="122" height="44" rx="22" fill="#0A1F44"/>
+  <text x="321" y="98" text-anchor="middle" fill="white" font-family="Inter, sans-serif" font-size="18" font-weight="700">AXION</text>
+  <rect x="86" y="248" width="124" height="56" rx="18" fill="white"/>
+  <text x="148" y="282" text-anchor="middle" fill="#0A1F44" font-family="Inter, sans-serif" font-size="20" font-weight="800">+47 XP</text>
+  <rect x="433" y="252" width="120" height="56" rx="18" fill="white"/>
+  <text x="493" y="286" text-anchor="middle" fill="#0A1F44" font-family="Inter, sans-serif" font-size="20" font-weight="800">🔥 12</text>
+</svg>

@@ -1,0 +1,12 @@
+<svg width="560" height="300" viewBox="0 0 560 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="10" y="10" width="540" height="280" rx="28" fill="#F2F8FF"/>
+  <path d="M70 160C126 98 191 94 248 146C302 194 356 197 493 126" stroke="#1E5FA8" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="70" cy="160" r="18" fill="#FFD166"/>
+  <circle cx="170" cy="124" r="18" fill="#FFD166"/>
+  <circle cx="248" cy="146" r="18" fill="#FFD166"/>
+  <circle cx="325" cy="182" r="18" fill="#57C8FF"/>
+  <circle cx="411" cy="178" r="18" fill="#D4DEEE"/>
+  <circle cx="493" cy="126" r="18" fill="#D4DEEE"/>
+  <rect x="60" y="212" width="146" height="58" rx="16" fill="white"/>
+  <text x="133" y="247" text-anchor="middle" fill="#0A1F44" font-family="Inter, sans-serif" font-size="20" font-weight="700">Trilha Path</text>
+</svg>

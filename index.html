@@ -1,323 +1,450 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Axiora Path - Seu filho cresce com proposito, todo dia</title>
-<meta name="description" content="Axiora Path - Plataforma gamificada de desenvolvimento infantil com IA adaptativa. Habitos, educacao financeira e aprendizagem para criancas de 6 a 15 anos.">
-<meta property="og:title" content="Axiora Path - Seu filho cresce com proposito, todo dia"><meta property="og:description" content="Transforme rotina, educacao financeira e aprendizagem em uma jornada que criancas adoram e pais conseguem acompanhar de verdade."><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image"><link rel="canonical" href="https://axiorapath.com.br">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
-<style>
-:root{
-  --navy:#0A1F44;
-  --navy-mid:#1A3A6B;
-  --navy-light:#ECF3FF;
-  --gold:#C9972B;
-  --gold-light:#FDF0D4;
-  --gold-shine:#FFD166;
-  --accent:#1E5FA8;
-  --accent-light:#DDEEFF;
-  --mint:#7AE582;
-  --sky:#4CC9F0;
-  --orange:#FF9F1C;
-  --white:#FFFFFF;
-  --gray-dark:#25324A;
-  --gray-mid:#63718A;
-  --gray-light:#E8EDF6;
-  --green:#1FA463;
-  --red-soft:#E84C61;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:'Inter',sans-serif;color:var(--gray-dark);line-height:1.5;background:linear-gradient(180deg,#f6f9ff 0%,#ffffff 320px)}
-body.no-scroll{overflow:hidden}
-h1,h2,h3,h4{margin:0;font-family:'Syne',sans-serif}
-p{margin:0}
-a{text-decoration:none;color:inherit}
-.container{width:min(1140px,calc(100% - 2rem));margin:auto}
-.section{padding:72px 0}
-.section-title{font-size:clamp(2rem,4vw,2.9rem);line-height:1.08;color:var(--navy);margin-bottom:16px;letter-spacing:-.02em}
-.section-subtitle{color:var(--gray-mid);font-size:1.125rem;max-width:760px}
-
-.skip-link{position:absolute;left:-999px;top:8px;background:var(--gold-shine);color:var(--navy);padding:8px 12px;border-radius:10px;z-index:9999;font-weight:700}
-.skip-link:focus{left:8px}
-:focus-visible{outline:3px solid var(--orange);outline-offset:2px}
-
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:2px solid transparent;border-radius:999px;padding:14px 28px;font-weight:700;font-size:1rem;transition:.2s cubic-bezier(.22,1,.36,1);cursor:pointer;transform:translateY(0)}
-.btn-primary{background:linear-gradient(180deg,#FFD166,#F7B733);color:var(--navy);box-shadow:0 7px 0 #c98b17,0 14px 24px rgba(247,183,51,.35)}
-.btn-primary:hover{transform:translateY(-2px);filter:saturate(1.08)}
-.btn-primary:active{transform:translateY(3px);box-shadow:0 3px 0 #c98b17,0 8px 16px rgba(247,183,51,.28)}
-.btn-secondary{color:#fff;background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.45)}
-.btn-secondary:hover{background:rgba(255,255,255,.2);transform:translateY(-2px)}
-
-.navbar{position:fixed;inset:0 0 auto 0;z-index:1000;padding:14px 0;background:transparent;transition:.25s}
-.navbar.scrolled{background:rgba(11,31,68,.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.1)}
-.nav-wrap{display:flex;align-items:center;justify-content:space-between;gap:16px}
-.logo{font-family:'Syne',sans-serif;font-weight:800;letter-spacing:.04em;color:#fff;font-size:1.2rem}
-.logo span{color:var(--gold-shine)}
-.nav-links{display:none;align-items:center;gap:24px;color:#dce7ff;font-weight:600}
-.nav-links a{position:relative}
-.nav-links a:after{content:'';position:absolute;left:0;right:0;bottom:-4px;height:2px;background:var(--gold-shine);transform:scaleX(0);transform-origin:left;transition:.2s}
-.nav-links a:hover:after{transform:scaleX(1)}
-.nav-cta{display:none}
-.hamburger{border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.12);color:#fff;width:42px;height:42px;border-radius:12px;display:grid;place-items:center;cursor:pointer}
-.mobile-menu{position:fixed;inset:0;background:rgba(10,31,68,.97);backdrop-filter:blur(8px);z-index:999;padding:100px 24px 24px;display:grid;align-content:start;gap:12px;opacity:0;pointer-events:none;transform:translateY(-8px);transition:.25s}
-.mobile-menu.open{opacity:1;pointer-events:auto;transform:none}
-.mobile-menu a{color:#fff;padding:14px;border-radius:14px;background:rgba(255,255,255,.08)}
-
-.hero{min-height:100vh;background:
- radial-gradient(circle at 15% 20%,rgba(76,201,240,.26),transparent 36%),
- radial-gradient(circle at 86% 23%,rgba(122,229,130,.22),transparent 32%),
- linear-gradient(130deg,#0A1F44 0%,#173C77 100%);
- color:#fff;padding:110px 0 56px;position:relative;overflow:hidden}
-.hero:after{content:'';position:absolute;inset:auto -20% -120px -20%;height:220px;background:radial-gradient(ellipse at center,rgba(255,255,255,.18),transparent 70%)}
-.hero-shape{position:absolute;border-radius:50%;background:rgba(255,255,255,.08);animation:float 10s ease-in-out infinite}
-.shape-1{width:240px;height:240px;top:12%;left:-80px}
-.shape-2{width:170px;height:170px;top:22%;right:8%;animation-delay:1.2s}
-.shape-3{width:120px;height:120px;bottom:12%;left:14%;animation-delay:2.2s}
-.hero-content{position:relative;z-index:1;max-width:900px;margin:auto;text-align:center}
-.hero-badge{display:inline-flex;gap:8px;font-size:.875rem;font-weight:700;color:#ffe8a8;border:1px solid rgba(255,230,166,.7);background:rgba(201,151,43,.2);border-radius:999px;padding:8px 14px;margin-bottom:18px}
-.hero h1{font-size:clamp(2.3rem,8vw,4.7rem);line-height:1.03;margin-bottom:18px;text-shadow:0 8px 26px rgba(0,0,0,.28)}
-.hero-highlight{color:var(--gold-shine);position:relative;display:inline-block}
-.hero-underline{position:absolute;left:0;right:0;bottom:-14px;width:100%;height:22px}
-.hero-underline path{stroke-dasharray:300;stroke-dashoffset:300;animation:drawUnderline 1s ease forwards .5s}
-.hero p{margin:auto;max-width:680px;color:#e5eeff;font-size:clamp(1rem,2vw,1.25rem);margin-bottom:28px}
-.hero-actions{display:flex;flex-direction:column;gap:12px;align-items:center;margin-bottom:20px}
-.hero-proof{color:#dce8ff;font-size:.9rem;display:grid;gap:6px;justify-content:center;margin-bottom:24px}
-.hero-playful-row{display:flex;flex-direction:column;align-items:center;gap:12px;margin:8px 0 26px}
-.axiora-mascot{width:min(360px,88vw);display:grid;place-items:center}
-.axiora-mascot svg{width:100%;height:auto;filter:drop-shadow(0 10px 20px rgba(0,0,0,.22));animation:bob 4s ease-in-out infinite}
-.hero-stickers{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
-.hero-sticker{background:#fff;color:#0A1F44;font-weight:800;font-size:.78rem;padding:8px 12px;border-radius:999px;border:2px solid #d9e7ff;box-shadow:0 5px 0 #cddfff;animation:wiggle 3.5s ease-in-out infinite}
-.hero-sticker:nth-child(2){animation-delay:.5s}.hero-sticker:nth-child(3){animation-delay:1s}
-
-.phone-stage{perspective:1200px;display:flex;justify-content:center;position:relative}
-.phone-stage:before{content:'🎯';position:absolute;left:10%;top:8%;font-size:2rem;filter:drop-shadow(0 8px 16px rgba(0,0,0,.25));animation:float 7s ease-in-out infinite}
-.phone-stage:after{content:'⭐';position:absolute;right:12%;bottom:12%;font-size:1.8rem;animation:float 8s ease-in-out infinite 1s}
-.phone{width:min(360px,92vw);background:#0C1C3A;border:10px solid #122344;border-radius:36px;padding:22px 16px 16px;transform:rotateX(8deg);box-shadow:0 20px 60px rgba(10,31,68,.4);position:relative}
-.phone:before{content:'';position:absolute;top:8px;left:50%;transform:translateX(-50%);width:110px;height:18px;border-radius:999px;background:#071024}
-.status{color:#A9B7D0;font-size:11px;display:flex;justify-content:space-between;margin-bottom:10px}
-.ui-card{border-radius:16px;background:rgba(255,255,255,.1);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.2);padding:12px;margin-bottom:10px}
-.progress-nodes{display:flex;justify-content:space-between;margin:10px 0 4px}
-.node{width:14px;height:14px;border-radius:50%;background:#64748B}
-.node.done{background:var(--green)}
-.node.gold{background:var(--gold-shine)}
-.mission-btn{margin-top:8px;width:100%;border:0;border-radius:12px;background:linear-gradient(180deg,#7AE582,#59CE65);color:#08361b;padding:10px;font-weight:700;box-shadow:0 5px 0 #2e9f49}
-.mission-btn:active{transform:translateY(2px);box-shadow:0 2px 0 #2e9f49}
-.avatar-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;color:#e0ebff;font-size:13px}
-.xp-bar{width:100%;height:10px;border-radius:999px;background:rgba(255,255,255,.15);overflow:hidden}
-.xp-bar span{display:block;width:60%;height:100%;background:linear-gradient(90deg,#FFD166,#FF9F1C);animation:fillBar 1.2s ease}
-
-.stats-grid{display:grid;gap:16px;grid-template-columns:1fr 1fr}
-.stat-card{border-radius:18px;border:2px solid #d6e5ff;border-top:7px solid var(--gold-shine);padding:20px;background:#fff;box-shadow:0 12px 0 #dce8fb,0 18px 30px rgba(24,58,110,.12)}
-.stat-card i{color:var(--accent)}
-.stat-num{color:var(--navy);font-size:clamp(2rem,5vw,3rem);line-height:1;margin:10px 0}
-.stat-label{color:var(--gray-mid);font-size:.875rem;font-weight:600}
-
-.problem{background:linear-gradient(180deg,#f2f7ff,#e8f1ff)}
-.problem-grid{display:grid;gap:16px;margin-top:28px}
-.problem-card{background:#fff;border-radius:20px;padding:24px;box-shadow:0 12px 0 #dce8fb,0 20px 30px rgba(10,31,68,.08);border:2px solid #dce8ff}
-.problem-card i{color:var(--red-soft)}
-.problem-card h3{color:var(--navy);margin:14px 0 8px;font-size:1.35rem}
-.problem-card p{color:var(--gray-mid)}
-.problem-divider{margin-top:26px;border-top:1px dashed #b9cae8;padding-top:16px;text-align:center;font-family:'Syne',sans-serif;font-size:1.35rem;color:var(--navy);font-weight:800}
-
-.how-blocks{margin-top:26px;display:grid;gap:24px}
-.how-block{display:grid;gap:18px;align-items:center;background:#fff;border-radius:24px;padding:20px;box-shadow:0 12px 0 #dce8fb,0 18px 28px rgba(10,31,68,.08);border:2px solid #dce8ff}
-.how-tag{display:inline-block;padding:6px 12px;border-radius:999px;background:linear-gradient(180deg,#eaf5ff,#d9edff);color:var(--accent);font-size:.82rem;font-weight:700;margin-bottom:8px}
-.how-block h3{color:var(--navy);font-size:1.75rem;margin-bottom:8px}
-.how-block p{color:var(--gray-mid)}
-.mock-box{border-radius:16px;padding:16px;border:2px solid #d8e2f1;background:linear-gradient(180deg,#fdfefe,#f3f6fb)}
-.trail-line{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;align-items:center;margin-bottom:8px}
-.trail-node{width:20px;height:20px;border-radius:50%;margin:auto;background:#CBD5E1}
-.trail-node.done{background:var(--orange)}
-.trail-node.current{background:var(--gold-shine);animation:pulse 1.6s ease infinite}
-.trail-xp{text-align:center;font-size:11px;color:var(--gray-mid);font-weight:600}
-.mission-list{display:grid;gap:8px}
-.mission-item{display:flex;justify-content:space-between;align-items:center;padding:10px;border-radius:12px;background:#fff;border:2px solid #e1e8f3}
-.check{width:20px;height:20px;border-radius:50%;border:2px solid var(--green);display:inline-grid;place-items:center;color:var(--green);font-size:12px;margin-right:6px}
-.shop-grid{display:grid;gap:8px}
-.shop-item{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;padding:10px;border-radius:12px;border:2px solid #dbe5f4;background:#fff}
-.pill{border-radius:999px;padding:4px 8px;font-size:11px;background:var(--gold-light);color:#7A5C1F;font-weight:700;display:inline-block}
-.bar-chart{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;align-items:end;height:120px;margin-bottom:10px}
-.bar{border-radius:6px 6px 2px 2px;background:linear-gradient(180deg,#FFCA5A,#F69B22)}
-
-.axion{background:radial-gradient(circle at 20% 20%,rgba(76,201,240,.22),transparent 35%),linear-gradient(145deg,#0A1F44,#173870);color:#fff;position:relative;overflow:hidden}
-.axion:before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 25% 20%,rgba(255,255,255,.08) 1px,transparent 1px),radial-gradient(circle at 70% 60%,rgba(255,255,255,.08) 1px,transparent 1px);background-size:120px 120px;opacity:.06}
-.axion-grid{position:relative;z-index:1;display:grid;gap:24px;align-items:center}
-.axion h2{color:var(--gold-shine)}
-.axion-subtitle{color:#e1ecff;font-size:1.25rem;margin-bottom:22px}
-.axion ul{list-style:none;padding:0;margin:16px 0;display:grid;gap:10px}
-.axion li{display:flex;gap:8px;color:#dce7ff}
-.axion-visual{min-height:360px;border-radius:24px;background:radial-gradient(circle at center,rgba(30,95,168,.55),rgba(10,31,68,.98));border:2px solid rgba(255,255,255,.2);position:relative;display:grid;place-items:center;overflow:hidden}
-.axion-center{width:120px;height:120px;border-radius:50%;background:linear-gradient(145deg,#fff,#cedef9);color:var(--navy);display:grid;place-items:center;font-weight:800;text-align:center;box-shadow:0 0 40px rgba(255,255,255,.35);z-index:2}
-.orbit{position:absolute;width:42px;height:42px;border-radius:50%;background:#fff;color:var(--navy);display:grid;place-items:center;font-size:12px;font-weight:800;animation:orbit 10s linear infinite;transform-origin:center}
-.o1{animation-duration:9s}.o2{animation-duration:11s;animation-delay:1.2s}.o3{animation-duration:10s;animation-delay:2.2s}.o4{animation-duration:12s;animation-delay:3s}
-.ring{position:absolute;width:240px;height:240px;border-radius:50%;border:2px dashed rgba(255,255,255,.3)}
-
-.features{background:linear-gradient(180deg,#eef5ff,#e7f0ff)}
-.features-grid{display:grid;gap:16px;margin-top:26px}
-.feature-card{padding:22px;border-radius:18px;background:#fff;box-shadow:0 12px 0 #dce8fb,0 18px 30px rgba(10,31,68,.08);transition:.22s;border:2px solid #dce8ff}
-.feature-card:hover{transform:translateY(-7px) scale(1.01)}
-.feature-card i{width:44px;height:44px;padding:9px;border-radius:12px;background:linear-gradient(180deg,#e8f3ff,#d8ebff);color:var(--accent)}
-.feature-card h3{color:var(--navy);margin:12px 0 8px;font-size:1.25rem}
-.feature-card p{color:var(--gray-mid)}
-
-.pricing-toggle{margin-top:20px;display:flex;align-items:center;gap:10px;color:var(--gray-mid);font-weight:700}
-.switch{width:52px;height:28px;border-radius:999px;background:#d5deec;position:relative;display:inline-block;cursor:pointer}
-.switch input{display:none}
-.switch:after{content:'';position:absolute;top:4px;left:4px;width:20px;height:20px;border-radius:50%;background:#fff;transition:.25s;box-shadow:0 2px 8px rgba(0,0,0,.2)}
-.switch:has(input:checked){background:var(--orange)}
-.switch:has(input:checked):after{transform:translateX(24px)}
-.annual-badge{display:none;background:#FFE9B4;color:#7a5c1f;border-radius:999px;padding:4px 10px;font-size:12px;font-weight:700}
-.pricing-grid{margin-top:24px;display:grid;gap:18px}
-.price-card{border:2px solid #d7e0ee;border-radius:24px;padding:24px;box-shadow:0 12px 0 #dce8fb,0 18px 26px rgba(10,31,68,.08);position:relative;background:#fff}
-.price-card:nth-child(1){background:linear-gradient(180deg,#fff,#f5f9ff)}
-.price-card:nth-child(3){background:linear-gradient(180deg,#fff,#f8f4ff)}
-.price-card.popular{transform:scale(1.02);border-color:#f3d487;box-shadow:0 14px 0 #f3e0b2,0 20px 34px rgba(201,151,43,.24)}
-.popular-badge{position:absolute;top:-12px;left:20px;background:linear-gradient(180deg,#FFD166,#F5B22D);color:var(--navy);border-radius:999px;padding:6px 12px;font-size:12px;font-weight:800}
-.price-value{font-family:'Syne',sans-serif;color:var(--navy);font-size:2.4rem;margin:8px 0}
-.price-list{list-style:none;padding:0;margin:12px 0 20px;display:grid;gap:8px;color:#374151}
-
-.schools{background:radial-gradient(circle at 86% 24%,rgba(76,201,240,.2),transparent 32%),linear-gradient(135deg,#0A1F44,#1A3A6B);color:#fff}
-.schools-grid{display:grid;gap:24px;align-items:center}
-.schools h2{color:#fff}
-.schools p{color:var(--gray-light)}
-.school-benefits{margin-top:18px;display:grid;gap:10px}
-.school-item{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:12px}
-.school-item h3{font-size:1.1rem;margin-bottom:4px}
-.school-pills{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 24px}
-.school-pills span{border-radius:999px;padding:8px 12px;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.12);font-size:12px;font-weight:700}
-.school-visual{border-radius:24px;border:2px solid rgba(255,255,255,.2);background:rgba(255,255,255,.11);backdrop-filter:blur(12px);padding:20px;box-shadow:0 20px 60px rgba(10,31,68,.2)}
-
-.testimonials{background:linear-gradient(180deg,#edf4ff,#e6f0ff)}
-.carousel{margin-top:24px;position:relative}
-.carousel-track{display:grid;gap:14px}
-.testimonial-card{background:#fff;border-radius:18px;border:2px solid #d9e3f1;padding:20px;box-shadow:0 12px 0 #dce8fb,0 16px 24px rgba(10,31,68,.06);opacity:0;pointer-events:none;transform:translateX(10px);transition:.35s;display:none}
-.testimonial-card.active{opacity:1;pointer-events:auto;transform:translateX(0);display:block}
-.avatar{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font-weight:800;margin-bottom:10px;color:var(--navy)}
-.a-gold{background:var(--gold-light)}.a-accent{background:var(--accent-light)}.a-navy{background:#dbe6f8}
-.stars{color:#F6B324;margin:8px 0}
-.carousel-controls{margin-top:14px;display:flex;align-items:center;justify-content:center;gap:10px}
-.carousel-btn{width:40px;height:40px;border-radius:50%;border:2px solid #c7d3e6;background:#fff;color:var(--navy);display:grid;place-items:center;cursor:pointer}
-.carousel-dots{display:flex;gap:8px}
-.carousel-dot{width:10px;height:10px;border-radius:50%;border:0;background:#b9c7dc;cursor:pointer;padding:0}
-.carousel-dot.active{background:var(--orange)}
-
-.faq-wrap{max-width:800px;margin:auto;margin-top:24px}
-.faq-item{border-bottom:1px solid var(--gray-light);padding:14px 0}
-.faq-question{width:100%;border:0;background:transparent;display:flex;justify-content:space-between;align-items:center;text-align:left;font-size:1rem;font-weight:700;color:var(--navy);cursor:pointer;padding:0}
-.faq-icon{font-size:1.5rem;color:var(--accent);transition:.25s}
-.faq-answer{max-height:0;overflow:hidden;transition:max-height .35s ease;color:var(--gray-mid);padding-right:22px}
-.faq-item.open .faq-answer{max-height:500px;margin-top:8px}
-.faq-item.open .faq-icon{transform:rotate(45deg)}
-
-.final-cta{background:radial-gradient(circle at 20% 20%,rgba(76,201,240,.24),transparent 30%),linear-gradient(135deg,#0A1F44,#1A3A6B);color:#fff;text-align:center;position:relative;overflow:hidden}
-.particle{position:absolute;width:100px;height:100px;border-radius:20px;background:rgba(255,255,255,.07);animation:float 11s ease-in-out infinite}
-.p1{top:12%;left:10%}.p2{top:18%;right:10%;animation-delay:1.5s}.p3{bottom:10%;left:22%;animation-delay:2.8s}.p4{bottom:8%;right:20%;animation-delay:4s}
-#waitlist-form{margin:24px auto 10px;width:min(900px,100%);display:grid;gap:10px}
-#waitlist-form input{width:100%;border-radius:999px;border:2px solid rgba(255,255,255,.28);background:rgba(255,255,255,.12);color:#fff;padding:14px 18px;font:inherit}
-#waitlist-form input::placeholder{color:#d7e2f6}
-#waitlist-form button{width:100%}
-.success-message{display:none;margin-top:20px;padding:16px;border-radius:14px;background:rgba(39,103,73,.25);border:1px solid rgba(39,103,73,.45);color:#d1f6de;font-weight:500}
-.security-line{margin-top:14px;font-size:.875rem;color:var(--gray-light);display:flex;justify-content:center;align-items:center;gap:8px;flex-wrap:wrap}
-
-footer{background:var(--navy);color:#fff;padding-top:60px}
-.footer-grid{display:grid;gap:20px}
-.footer-col h4{font-size:1rem;margin-bottom:10px}
-.footer-col p,.footer-col a{color:#c5d2e8;font-size:14px;display:block;margin-bottom:8px}
-.socials{display:flex;gap:10px;margin-top:12px}
-.socials a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.08);display:grid;place-items:center;transition:.25s}
-.socials a:hover{color:var(--gold-shine);transform:translateY(-3px)}
-.footer-bottom{margin-top:26px;padding:14px 0 18px;border-top:1px solid rgba(255,255,255,.1);text-align:center;color:#c5d2e8;font-size:13px}
-
-.animate-on-scroll{opacity:0;transform:translateY(30px);transition:opacity .6s ease,transform .6s ease}
-.animate-on-scroll.visible{opacity:1;transform:none}
-.animate-on-scroll:nth-child(1){transition-delay:0ms}
-.animate-on-scroll:nth-child(2){transition-delay:100ms}
-.animate-on-scroll:nth-child(3){transition-delay:200ms}
-.animate-on-scroll:nth-child(4){transition-delay:300ms}
-
-@keyframes float{0%,100%{transform:translateY(0) rotate(0)}33%{transform:translateY(-20px) rotate(2deg)}66%{transform:translateY(-10px) rotate(-1deg)}}
-@keyframes fillBar{from{width:0}to{width:60%}}
-@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(201,151,43,.4)}50%{box-shadow:0 0 0 12px rgba(201,151,43,0)}}
-@keyframes orbit{from{transform:rotate(0deg) translateX(80px) rotate(0deg)}to{transform:rotate(360deg) translateX(80px) rotate(-360deg)}}
-@keyframes drawUnderline{from{stroke-dashoffset:300}to{stroke-dashoffset:0}}
-@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-@keyframes wiggle{0%,100%{transform:rotate(0deg)}25%{transform:rotate(-2deg)}75%{transform:rotate(2deg)}}
-
-@media(min-width:480px){
-  .hero-playful-row{flex-direction:row;justify-content:center;align-items:flex-end}
-  .axiora-mascot{width:min(420px,62vw)}
-
-  .hero-actions{flex-direction:row}
-  #waitlist-form{grid-template-columns:1fr 1fr}
-  #waitlist-form button{grid-column:1/-1}
-  .footer-grid{grid-template-columns:1fr 1fr}
-}
-@media(min-width:768px){
-  .section{padding:88px 0}
-  .nav-links{display:flex}
-  .nav-cta{display:inline-flex}
-  .hamburger,.mobile-menu{display:none}
-  .stats-grid{grid-template-columns:repeat(4,1fr)}
-  .problem-grid{grid-template-columns:repeat(3,1fr)}
-  .how-block{grid-template-columns:1.1fr .9fr;padding:28px}
-  .how-block.reverse .copy{order:2}
-  .how-block.reverse .visual{order:1}
-  .axion-grid{grid-template-columns:1fr 1fr}
-  .features-grid{grid-template-columns:repeat(2,1fr)}
-  .pricing-grid{grid-template-columns:repeat(3,1fr);align-items:stretch}
-  .schools-grid{grid-template-columns:1fr 1fr}
-  .carousel-track{grid-template-columns:repeat(3,1fr)}
-  .testimonial-card{display:block;opacity:.55;pointer-events:auto;transform:none}
-  .testimonial-card.active{opacity:1;transform:translateY(-4px)}
-  #waitlist-form{grid-template-columns:1fr 1fr 1fr auto;align-items:center}
-  #waitlist-form button{grid-column:auto;width:auto;padding:14px 22px}
-  .footer-grid{grid-template-columns:1.2fr 1fr 1fr 1fr}
-}
-@media(min-width:1200px){
-  .features-grid{grid-template-columns:repeat(3,1fr)}
-  .hero h1{font-size:min(4.6rem,7vw)}
-  .price-card.popular{transform:scale(1.05)}
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Axiora Path | Sistema Operacional de Evolução Infantil</title>
+  <meta name="description" content="Axiora Path: plataforma gamificada de hábitos, educação financeira e aprendizagem para crianças de 6 a 15 anos, com IA adaptativa Axion e acompanhamento real para pais." />
+  <meta property="og:title" content="Axiora Path | Seu filho cresce com propósito, todo dia" />
+  <meta property="og:description" content="Microvitórias em menos de 3 minutos, progressão visual e métricas reais para a família." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://axiorapath.com.br" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-<a href="#main" class="skip-link">Ir para o conteudo</a>
-<header>
-<nav class="navbar" aria-label="Navegacao principal"><div class="container nav-wrap"><a href="#" class="logo" aria-label="Ir para o inicio">AXIORA <span>PATH</span></a><div class="nav-links"><a href="#como-funciona">Como Funciona</a><a href="#beneficios">Beneficios</a><a href="#planos">Planos</a><a href="#para-escolas">Para Escolas</a></div><a href="#waitlist-form" class="btn btn-primary nav-cta" aria-label="Comecar gratis no Axiora Path">Comecar Gratis <span aria-hidden="true">→</span></a><button class="hamburger" aria-label="Abrir menu mobile"><i data-lucide="menu" aria-hidden="true"></i></button></div></nav>
-<div class="mobile-menu" aria-label="Menu mobile"><a href="#como-funciona">Como Funciona</a><a href="#beneficios">Beneficios</a><a href="#planos">Planos</a><a href="#para-escolas">Para Escolas</a><a href="#waitlist-form" class="btn btn-primary" aria-label="Entrar na lista de espera">Quero Testar Gratis</a></div>
-</header>
-<main id="main">
-<section class="hero"><div class="hero-shape shape-1" aria-hidden="true"></div><div class="hero-shape shape-2" aria-hidden="true"></div><div class="hero-shape shape-3" aria-hidden="true"></div><div class="container"><div class="hero-content animate-on-scroll visible"><div class="hero-badge">🏆 Plataforma #1 de Desenvolvimento Infantil com IA</div><h1>Seu filho cresce com<br><span class="hero-highlight">proposito<svg class="hero-underline" viewBox="0 0 300 24" fill="none" aria-hidden="true"><path d="M4 12C51 1 78 22 123 12C170 1 215 23 296 8" stroke="#FFD166" stroke-width="4" stroke-linecap="round"/></svg></span> - todo dia.</h1><p>Axiora Path transforma rotina, educacao financeira e aprendizagem em uma jornada gamificada que criancas de 6 a 15 anos adoram fazer - e pais conseguem acompanhar de verdade.</p><div class="hero-actions"><a href="#waitlist-form" class="btn btn-primary" aria-label="Quero testar gratis o Axiora Path">Quero Testar Gratis</a><a href="#como-funciona" class="btn btn-secondary" aria-label="Ver como funciona o Axiora Path">Ver Como Funciona ↓</a></div><div class="hero-proof"><span>⭐⭐⭐⭐⭐ Mais de 2.400 familias ja na lista de espera</span><span><i data-lucide="lock" aria-hidden="true"></i> Sem cartao de credito · Cancele quando quiser</span></div><div class="hero-playful-row animate-on-scroll"><div class="axiora-mascot" role="img" aria-label="Mascote Axion guiando a jornada da crianca"><svg viewBox="0 0 460 210" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="bodyGrad" x1="0" x2="1"><stop offset="0" stop-color="#7AE582"/><stop offset="1" stop-color="#4CC9F0"/></linearGradient></defs><ellipse cx="230" cy="176" rx="128" ry="20" fill="rgba(10,31,68,.18)"/><rect x="150" y="54" width="160" height="102" rx="44" fill="url(#bodyGrad)"/><circle cx="191" cy="97" r="16" fill="#fff"/><circle cx="269" cy="97" r="16" fill="#fff"/><circle cx="192" cy="98" r="7" fill="#0A1F44"/><circle cx="268" cy="98" r="7" fill="#0A1F44"/><path d="M190 126 Q230 150 270 126" fill="none" stroke="#0A1F44" stroke-width="8" stroke-linecap="round"/><circle cx="145" cy="86" r="14" fill="#FFD166"/><circle cx="316" cy="86" r="14" fill="#FFD166"/><path d="M126 60 C130 36 161 28 182 43" fill="none" stroke="#FFD166" stroke-width="8" stroke-linecap="round"/><path d="M334 60 C330 36 299 28 278 43" fill="none" stroke="#FFD166" stroke-width="8" stroke-linecap="round"/><rect x="176" y="20" width="108" height="36" rx="18" fill="#0A1F44"/><text x="230" y="43" text-anchor="middle" fill="#fff" font-size="16" font-family="Inter" font-weight="700">AXION</text><circle cx="112" cy="144" r="26" fill="#fff"/><text x="112" y="150" text-anchor="middle" fill="#0A1F44" font-size="18" font-family="Inter" font-weight="800">+XP</text><circle cx="349" cy="146" r="26" fill="#fff"/><text x="349" y="151" text-anchor="middle" fill="#0A1F44" font-size="17" font-family="Inter" font-weight="800">🔥</text></svg></div><div class="hero-stickers"><span class="hero-sticker">Missao completa</span><span class="hero-sticker">+47 XP</span><span class="hero-sticker">Streak 12 dias</span></div></div></div><div class="phone-stage animate-on-scroll"><div class="phone" role="img" aria-label="Mockup do aplicativo Axiora Path"><div class="status"><span>9:41</span><span>LTE · 84%</span></div><div class="ui-card"><strong style="color:#fff;font-size:13px">Trilha: Habitos e Disciplina</strong><div class="progress-nodes"><span class="node done"></span><span class="node done gold"></span><span class="node done"></span><span class="node"></span><span class="node"></span></div></div><div class="ui-card" style="color:#dce7fb"><strong style="font-size:13px">Missao de hoje: Economizar R$ 5,00 - 47 XP</strong><button class="mission-btn" aria-label="Iniciar missao do dia">Iniciar</button></div><div class="ui-card"><div class="avatar-row"><span>Lucas, 9 anos</span><span>🔥 12 dias</span></div><div class="xp-bar"><span></span></div></div></div></div></div></section>
-<section class="section" aria-label="Metricas"><div class="container"><div class="stats-grid"><article class="stat-card animate-on-scroll"><i data-lucide="target" aria-hidden="true"></i><h3 class="stat-num">6 a 15</h3><p class="stat-label">anos de desenvolvimento cobertos</p></article><article class="stat-card animate-on-scroll"><i data-lucide="trending-up" aria-hidden="true"></i><h3 class="stat-num">+70%</h3><p class="stat-label">de margem bruta projetada</p></article><article class="stat-card animate-on-scroll"><i data-lucide="flame" aria-hidden="true"></i><h3 class="stat-num">D30 ≥ 25%</h3><p class="stat-label">meta de retencao do MVP</p></article><article class="stat-card animate-on-scroll"><i data-lucide="badge-check" aria-hidden="true"></i><h3 class="stat-num">3 MVPs</h3><p class="stat-label">validacoes antes de escalar</p></article></div></div></section>
-<section class="section problem" aria-label="Problema"><div class="container"><h2 class="section-title animate-on-scroll">Toda crianca tem potencial. O que falta e o sistema certo.</h2><div class="problem-grid"><article class="problem-card animate-on-scroll"><i data-lucide="clock-alert" aria-hidden="true"></i><h3>Rotina? Que rotina?</h3><p>Brigas diarias para completar tarefas, estudar e manter disciplina - sem nenhum sistema que motive de verdade.</p></article><article class="problem-card animate-on-scroll"><i data-lucide="smartphone" aria-hidden="true"></i><h3>Horas de tela sem proposito</h3><p>Seu filho esta conectado - mas em conteudo passivo, sem aprendizado, sem progressao e sem nenhum resultado mensuravel.</p></article><article class="problem-card animate-on-scroll"><i data-lucide="wallet-cards" aria-hidden="true"></i><h3>Educacao financeira? Depois...</h3><p>Ensinar o valor do dinheiro, responsabilidade e autocontrole e essencial - mas nao existe uma forma pratica e envolvente de fazer isso.</p></article></div><div class="problem-divider animate-on-scroll">↓ O Axiora Path resolve os tres - ao mesmo tempo.</div></div></section>
-<section id="como-funciona" class="section" aria-label="Como funciona"><div class="container"><h2 class="section-title animate-on-scroll">Uma jornada que a crianca quer fazer - todo dia.</h2><div class="how-blocks"><article class="how-block animate-on-scroll"><div class="copy"><span class="how-tag">📍 Trilhas (Path)</span><h3>Progressao visual que vicia - do jeito certo</h3><p>Cada crianca segue sua propria trilha de desenvolvimento: unidades, licoes e checkpoints com status visual claro (feito ✅ / pendente ⏳ / bloqueado 🔒).</p></div><div class="visual mock-box" role="img" aria-label="Mockup de trilha gamificada"><div class="trail-line"><span class="trail-node done"></span><span class="trail-node done"></span><span class="trail-node done"></span><span class="trail-node current"></span><span class="trail-node"></span><span class="trail-node"></span></div><div class="trail-line" style="margin-top:0"><span class="trail-xp">20 XP</span><span class="trail-xp">40 XP</span><span class="trail-xp">60 XP</span><span class="trail-xp">80 XP</span><span class="trail-xp">100 XP</span><span class="trail-xp">120 XP</span></div></div></article><article class="how-block reverse animate-on-scroll"><div class="copy"><span class="how-tag">⚡ Missoes</span><h3>Habitos que se tornam rotina em menos de 3 minutos</h3><p>Missoes curtas e progressivas. Cada missao concluida gera XP, Coins e reforco positivo imediato.</p></div><div class="visual mock-box" role="img" aria-label="Mockup de missoes diarias"><div class="mission-list"><div class="mission-item"><span><span class="check">✓</span>Ler 10 min</span><strong>+25 XP</strong></div><div class="mission-item"><span><span class="check">✓</span>Arrumar mochila</span><strong>+18 XP</strong></div><div class="mission-item"><span><span class="check">✓</span>Guardar R$ 2</span><strong>+30 XP</strong></div></div></div></article><article class="how-block animate-on-scroll"><div class="copy"><span class="how-tag">💰 Economia</span><h3>A crianca aprende o valor do esforco na pratica</h3><p>XP, Coins, Loja, skins e badges formam um sistema de recompensa real.</p></div><div class="visual mock-box" role="img" aria-label="Mockup da loja de recompensas"><div class="shop-grid"><div class="shop-item"><span>Skin astronauta</span><span class="pill">120 Coins</span></div><div class="shop-item"><span>Badge lendario</span><span class="pill">90 Coins</span></div><div class="shop-item"><span>Item de trilha</span><span class="pill">Economizando 📦</span></div></div></div></article><article class="how-block reverse animate-on-scroll"><div class="copy"><span class="how-tag">📊 Para os Pais</span><h3>Voce acompanha cada passo - sem microgerenciar</h3><p>Painel semanal com evolucao real, areas de atencao e recomendacoes do Axion.</p></div><div class="visual mock-box" role="img" aria-label="Mockup do dashboard parental"><div class="bar-chart"><span class="bar" style="height:32%"></span><span class="bar" style="height:64%"></span><span class="bar" style="height:48%"></span><span class="bar" style="height:78%"></span><span class="bar" style="height:55%"></span><span class="bar" style="height:86%"></span><span class="bar" style="height:70%"></span></div><p style="font-size:13px;color:#41526f">Lucas completou 5 de 7 missoes esta semana 🎉</p><button class="btn" style="margin-top:10px;padding:10px 14px;border-radius:10px;background:#1E5FA8;color:#fff">Ajustar Meta</button></div></article></div></div></section>
-<section class="section axion" aria-label="Axion IA"><div class="container axion-grid"><div class="animate-on-scroll"><h2 class="section-title">Conheca o Axion</h2><p class="axion-subtitle">A IA que faz o Axiora Path ser diferente de tudo que voce ja viu.</p><p>O Axion nao e um chatbot. E o motor adaptativo que aprende o perfil motivacional e os padroes de consistencia.</p><ul><li><span>⚡</span><span>Ajustar a dificuldade das missoes automaticamente</span></li><li><span>⚡</span><span>Recomendar o proximo passo ideal no momento certo</span></li><li><span>⚡</span><span>Enviar mensagens de reforco personalizadas</span></li><li><span>⚡</span><span>Avisar os pais sobre padroes de queda</span></li></ul><p>E como ter um tutor particular que melhora a cada dia.</p></div><div class="axion-visual animate-on-scroll" role="img" aria-label="Visualizacao do motor Axion com orbitas de dados"><div class="ring" aria-hidden="true"></div><div class="axion-center">Lucas<br>Perfil</div><div class="orbit o1">🧠</div><div class="orbit o2">📈</div><div class="orbit o3">🎯</div><div class="orbit o4">💬</div></div></div></section>
-<section id="beneficios" class="section features" aria-label="Beneficios principais"><div class="container"><h2 class="section-title animate-on-scroll">Tudo que sua familia precisa em um so lugar.</h2><div class="features-grid"><article class="feature-card animate-on-scroll"><i data-lucide="route" aria-hidden="true"></i><h3>Trilha Personalizada</h3><p>Progressao visual e sequencia de conteudo adaptada por idade e perfil.</p></article><article class="feature-card animate-on-scroll"><i data-lucide="zap" aria-hidden="true"></i><h3>Missoes Diarias</h3><p>Habitos, tarefas e desafios curtos com reforco positivo e streak motivador.</p></article><article class="feature-card animate-on-scroll"><i data-lucide="coins" aria-hidden="true"></i><h3>Economia & Loja</h3><p>Sistema completo de XP, Coins e loja para educacao financeira na pratica.</p></article><article class="feature-card animate-on-scroll"><i data-lucide="layout-dashboard" aria-hidden="true"></i><h3>Dashboard dos Pais</h3><p>Metricas reais de consistencia, evolucao e alertas proativos semanais.</p></article><article class="feature-card animate-on-scroll"><i data-lucide="brain-circuit" aria-hidden="true"></i><h3>Motor Axion (IA)</h3><p>Personalizacao profunda por perfil motivacional - sem intervencao manual.</p></article><article class="feature-card animate-on-scroll"><i data-lucide="users" aria-hidden="true"></i><h3>Multi-crianca</h3><p>Gerencie toda a familia em um unico plano.</p></article></div></div></section>
-<section id="planos" class="section" aria-label="Planos e precos"><div class="container"><h2 class="section-title animate-on-scroll">Escolha o plano ideal para sua familia</h2><div class="pricing-toggle animate-on-scroll"><span>Mensal</span><label class="switch billing-toggle" aria-label="Alternar entre cobranca mensal e anual"><input type="checkbox"></label><span>Anual</span><span class="annual-badge">Economize 20%</span></div><div class="pricing-grid"><article class="price-card animate-on-scroll"><h3>FREE</h3><p class="price-value">R$ <span data-monthly data-monthly="0" data-annual="0">0</span></p><p>Comece hoje, sem compromisso</p><ul class="price-list"><li>✅ 1 crianca</li><li>✅ Trilhas limitadas (primeiros 3 modulos)</li><li>✅ Economia basica (XP/Coins)</li><li>✅ Dashboard parental simples</li><li>✅ Missoes do dia (ate 2/dia)</li></ul><a class="btn" style="border-color:var(--navy);color:var(--navy)" href="#waitlist-form" aria-label="Comecar gratis no plano free">Comecar Gratis</a></article><article class="price-card popular animate-on-scroll"><span class="popular-badge">⭐ Mais Popular</span><h3>PRO</h3><p class="price-value"><span data-monthly data-monthly="R$ 34/mes" data-annual="R$ 29/mes">R$ 34/mes</span></p><p>O melhor custo-beneficio para familias</p><ul class="price-list"><li>✅ Criancas ilimitadas</li><li>✅ Todas as trilhas desbloqueadas</li><li>✅ Economia completa + Loja + Badges</li><li>✅ Relatorios semanais detalhados</li><li>✅ Missoes ilimitadas + Streak avancado</li><li>✅ Eventos mensais exclusivos</li><li>✅ Suporte por e-mail</li></ul><a class="btn btn-primary" href="#waitlist-form" aria-label="Assinar plano pro">Assinar PRO →</a></article><article class="price-card animate-on-scroll"><h3>PREMIUM</h3><p class="price-value"><span data-monthly data-monthly="R$ 69/mes" data-annual="R$ 59/mes">R$ 69/mes</span></p><p>Para familias que querem o maximo</p><ul class="price-list"><li>✅ Tudo do PRO</li><li>✅ Motor Axion completo (IA total)</li><li>✅ Personalizacao profunda por perfil</li><li>✅ Relatorios avancados + insights preditivos</li><li>✅ Packs premium de trilhas e skins</li><li>✅ Suporte prioritario</li><li>✅ Acesso antecipado a novidades</li></ul><a class="btn" style="background:var(--navy);color:#fff" href="#waitlist-form" aria-label="Assinar plano premium">Assinar Premium →</a></article></div><p style="text-align:center;margin-top:16px;color:#4a5d7e">🔒 Pagamento 100% seguro · Cancele quando quiser · Sem multa</p></div></section>
-<section id="para-escolas" class="section schools" aria-label="Solucao para escolas"><div class="container schools-grid"><div class="animate-on-scroll"><span class="how-tag" style="background:rgba(255,255,255,.15);color:#fff">🏫 Para Educadores</span><h2 class="section-title">O Axiora Path tambem vai para a sala de aula.</h2><p class="section-subtitle" style="color:#dce5f5">Pilotos selecionados com escolas privadas - resultados mensuraveis em 60 dias.</p><div class="school-benefits"><article class="school-item"><h3>Engajamento Extra-Classe</h3><p>Dashboards por turma com indicadores de engajamento e evolucao individual.</p></article><article class="school-item"><h3>Suporte ao Professor</h3><p>Recomendacoes de reforco e intervencoes baseadas em dados comportamentais.</p></article><article class="school-item"><h3>Mensuracao Real</h3><p>Relatorios para projetos pedagogicos e socioemocionais com evidencia de impacto.</p></article></div><div class="school-pills"><span>Starter - ate 200 alunos</span><span>Pro School - ate 1.000 alunos</span><span>Enterprise - acima de 1.000 alunos</span></div><a href="#waitlist-form" class="btn btn-primary" aria-label="Levar Axiora Path para minha escola">Quero Levar para Minha Escola →</a></div><aside class="school-visual animate-on-scroll" role="img" aria-label="Painel de escola com indicadores por turma"><h3 style="margin-bottom:10px">Piloto 60 dias - Turma 5A</h3><div class="bar-chart" style="height:140px"><span class="bar" style="height:42%"></span><span class="bar" style="height:52%"></span><span class="bar" style="height:61%"></span><span class="bar" style="height:70%"></span><span class="bar" style="height:84%"></span><span class="bar" style="height:76%"></span><span class="bar" style="height:89%"></span></div><p>Engajamento medio subiu de 48% para 81% em 8 semanas.</p></aside></div></section>
-<section class="section testimonials" aria-label="Depoimentos"><div class="container"><h2 class="section-title animate-on-scroll">O que familias e educadores estao dizendo</h2><div class="carousel animate-on-scroll"><div class="carousel-track"><article class="testimonial-card active"><div class="avatar a-gold">CM</div><strong>Carla M., mae do Pedro (8 anos)</strong><div class="stars">⭐⭐⭐⭐⭐</div><p>"Em duas semanas, o Pedro passou a pedir pra fazer as missoes antes de me pedir pra ver YouTube."</p></article><article class="testimonial-card"><div class="avatar a-accent">RB</div><strong>Rafael B., pai da Sofia (11 anos)</strong><div class="stars">⭐⭐⭐⭐⭐</div><p>"Minha filha economizou Coins por 3 semanas e aprendeu mais sobre dinheiro em um mes."</p></article><article class="testimonial-card"><div class="avatar a-navy">AL</div><strong>Ana L., coordenadora pedagogica</strong><div class="stars">⭐⭐⭐⭐⭐</div><p>"Os relatorios por turma me dao visibilidade para agir antes de virar problema serio."</p></article></div><div class="carousel-controls"><button class="carousel-btn carousel-prev" aria-label="Ver depoimento anterior"><i data-lucide="chevron-left" aria-hidden="true"></i></button><div class="carousel-dots"><button class="carousel-dot active" aria-label="Ir para depoimento 1"></button><button class="carousel-dot" aria-label="Ir para depoimento 2"></button><button class="carousel-dot" aria-label="Ir para depoimento 3"></button></div><button class="carousel-btn carousel-next" aria-label="Ver proximo depoimento"><i data-lucide="chevron-right" aria-hidden="true"></i></button></div></div></div></section>
-<section class="section" aria-label="FAQ"><div class="container"><h2 class="section-title" style="text-align:center">Perguntas frequentes</h2><div class="faq-wrap"><article class="faq-item animate-on-scroll"><button class="faq-question">Para qual faixa etaria e o Axiora Path?<span class="faq-icon">+</span></button><div class="faq-answer"><p>Para criancas de 6 a 15 anos com conteudo adaptado por faixa etaria.</p></div></article><article class="faq-item animate-on-scroll"><button class="faq-question">Como funciona o periodo gratuito?<span class="faq-icon">+</span></button><div class="faq-answer"><p>O plano FREE e permanente e sem cartao de credito. O upgrade e opcional.</p></div></article><article class="faq-item animate-on-scroll"><button class="faq-question">Meu filho pode usar sem supervisao?<span class="faq-icon">+</span></button><div class="faq-answer"><p>Sim. O app foi projetado para uso autonomo com dashboard parental.</p></div></article><article class="faq-item animate-on-scroll"><button class="faq-question">O Axion (IA) coleta dados do meu filho?<span class="faq-icon">+</span></button><div class="faq-answer"><p>O Axion processa dados comportamentais para personalizacao, com LGPD e consentimento parental.</p></div></article><article class="faq-item animate-on-scroll"><button class="faq-question">Posso cadastrar mais de um filho?<span class="faq-icon">+</span></button><div class="faq-answer"><p>No FREE e 1 crianca. No PRO e PREMIUM, criancas ilimitadas.</p></div></article><article class="faq-item animate-on-scroll"><button class="faq-question">Como funciona a educacao financeira?<span class="faq-icon">+</span></button><div class="faq-answer"><p>Por meio de XP e Coins, com poupanca e escolhas dentro da loja.</p></div></article><article class="faq-item animate-on-scroll"><button class="faq-question">O Axiora Path substitui a escola?<span class="faq-icon">+</span></button><div class="faq-answer"><p>Nao. Ele complementa a educacao formal em habitos e socioemocional.</p></div></article><article class="faq-item animate-on-scroll"><button class="faq-question">Como funciona o piloto para escolas?<span class="faq-icon">+</span></button><div class="faq-answer"><p>Pilotos de 60-90 dias com metas e indicadores definidos em conjunto.</p></div></article></div></div></section>
-<section class="section final-cta" aria-label="Lista de espera"><div class="particle p1" aria-hidden="true"></div><div class="particle p2" aria-hidden="true"></div><div class="particle p3" aria-hidden="true"></div><div class="particle p4" aria-hidden="true"></div><div class="container" style="position:relative;z-index:1"><h2 class="section-title" style="color:#fff">Seu filho comeca a jornada hoje.</h2><p class="section-subtitle" style="color:#e2ebfb;margin-inline:auto">Junte-se as familias que ja estao na lista de espera. Acesso antecipado e preco especial de fundadores.</p><form id="waitlist-form" aria-label="Formulario de lista de espera"><input type="text" placeholder="Nome do responsavel" required aria-label="Nome do responsavel"><input type="email" placeholder="Seu melhor e-mail" required aria-label="Seu melhor email"><input type="text" placeholder="Nome do filho (opcional)" aria-label="Nome do filho opcional"><button type="submit" class="btn btn-primary" aria-label="Entrar na lista de espera">Quero Meu Acesso Antecipado →</button></form><div class="success-message" role="status" aria-live="polite">🎉 Incrivel! Voce esta na lista. Avisaremos voce assim que as vagas abrirem - com condicoes especiais de fundador.</div><div class="security-line"><span>🔒 Seus dados estao seguros. Nenhum spam, nunca.</span><i data-lucide="lock" aria-hidden="true"></i><i data-lucide="shield-check" aria-hidden="true"></i><span>LGPD</span></div></div></section>
-</main>
-<footer><div class="container"><div class="footer-grid"><div class="footer-col"><div class="logo" style="font-size:1.15rem">AXIORA <span>PATH</span></div><p>O Sistema Operacional de Evolucao Infantil.</p><div class="socials" aria-label="Redes sociais"><a href="#" aria-label="Instagram"><i data-lucide="instagram" aria-hidden="true"></i></a><a href="#" aria-label="TikTok"><i data-lucide="music-2" aria-hidden="true"></i></a><a href="#" aria-label="YouTube"><i data-lucide="youtube" aria-hidden="true"></i></a><a href="#" aria-label="LinkedIn"><i data-lucide="linkedin" aria-hidden="true"></i></a></div></div><div class="footer-col"><h4>Produto</h4><a href="#como-funciona">Como Funciona</a><a href="#planos">Planos e Precos</a><a href="#para-escolas">Para Escolas</a><a href="#">Axion (IA)</a><a href="#">FAQ</a></div><div class="footer-col"><h4>Empresa</h4><a href="#">Sobre Nos</a><a href="#">Blog</a><a href="#">Carreiras</a><a href="#">Contato</a><a href="#">Imprensa</a></div><div class="footer-col"><h4>Legal</h4><a href="#">Politica de Privacidade</a><a href="#">Termos de Uso</a><a href="#">Consentimento Parental (LGPD)</a><a href="#">Politica de Cookies</a><a href="#">Protecao de Dados</a></div></div><div class="footer-bottom">© 2026 Axiora Path. Todos os direitos reservados. | Feito com ❤️ para familias brasileiras</div></div></footer>
-<script src="https://unpkg.com/lucide@latest"></script>
-<script>
-window.addEventListener('scroll',()=>{const nav=document.querySelector('.navbar');nav.classList.toggle('scrolled',window.scrollY>80)});
-document.querySelector('.hamburger')?.addEventListener('click',()=>{document.querySelector('.mobile-menu')?.classList.toggle('open');document.body.classList.toggle('no-scroll')});
-document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{const href=a.getAttribute('href');if(!href||href==='#')return;e.preventDefault();const target=document.querySelector(href);if(target)target.scrollIntoView({behavior:'smooth',block:'start'});document.querySelector('.mobile-menu')?.classList.remove('open');document.body.classList.remove('no-scroll')})});
-document.querySelector('.billing-toggle input')?.addEventListener('change',e=>{document.querySelectorAll('[data-monthly]').forEach(el=>{el.textContent=e.target.checked?el.dataset.annual:el.dataset.monthly});document.querySelector('.annual-badge').style.display=e.target.checked?'inline':'none'});
-document.querySelectorAll('.faq-question').forEach(q=>{q.addEventListener('click',()=>{const item=q.parentElement;const isOpen=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));if(!isOpen)item.classList.add('open')})});
-let current=0;const slides=document.querySelectorAll('.testimonial-card');const dots=document.querySelectorAll('.carousel-dot');function goTo(n){slides[current]?.classList.remove('active');dots[current]?.classList.remove('active');current=(n+slides.length)%slides.length;slides[current]?.classList.add('active');dots[current]?.classList.add('active')}document.querySelector('.carousel-prev')?.addEventListener('click',()=>goTo(current-1));document.querySelector('.carousel-next')?.addEventListener('click',()=>goTo(current+1));dots.forEach((dot,i)=>dot.addEventListener('click',()=>goTo(i)));setInterval(()=>goTo(current+1),5000);
-document.getElementById('waitlist-form')?.addEventListener('submit',e=>{e.preventDefault();const form=e.target;form.style.display='none';document.querySelector('.success-message').style.display='block'});
-const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}})},{threshold:.15});document.querySelectorAll('.animate-on-scroll').forEach(el=>observer.observe(el));
-if(window.lucide){window.lucide.createIcons()}
-</script>
+  <a class="skip-link" href="#main">Ir para o conteúdo</a>
+
+  <header class="topbar" id="topo">
+    <nav class="navbar container" aria-label="Navegação principal">
+      <a class="brand" href="#topo" aria-label="Axiora Path, voltar ao início">
+        <span class="brand-main">AXIORA</span>
+        <span class="brand-accent">PATH</span>
+      </a>
+
+      <button class="hamburger" aria-label="Abrir menu">
+        <i data-lucide="menu" aria-hidden="true"></i>
+      </button>
+
+      <ul class="nav-links">
+        <li><a href="#como-funciona">Como funciona</a></li>
+        <li><a href="#beneficios">Benefícios</a></li>
+        <li><a href="#planos">Planos</a></li>
+        <li><a href="#para-escolas">Para escolas</a></li>
+      </ul>
+
+      <a class="btn btn-primary nav-cta" href="#cta-final" aria-label="Começar grátis no Axiora Path">Começar grátis</a>
+    </nav>
+
+    <div class="mobile-menu" aria-label="Menu mobile">
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#beneficios">Benefícios</a>
+      <a href="#planos">Planos</a>
+      <a href="#para-escolas">Para escolas</a>
+      <a class="btn btn-primary" href="#cta-final" aria-label="Começar grátis">Começar grátis</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero section" aria-label="Introdução do Axiora Path">
+      <div class="hero-bg-shape shape-a" aria-hidden="true"></div>
+      <div class="hero-bg-shape shape-b" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy animate-on-scroll visible">
+          <span class="chip chip-highlight">Plataforma #1 de evolução infantil com IA adaptativa</span>
+          <h1>Seu filho evolui com propósito,<br />hábitos e autonomia em menos de 3 minutos por missão.</h1>
+          <p>
+            Para crianças de 6 a 15 anos: rotina, educação financeira e aprendizagem em uma jornada gamificada
+            com reforço positivo e acompanhamento real para pais.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#cta-final" aria-label="Começar grátis agora">Começar grátis</a>
+            <a class="btn btn-secondary" href="#como-funciona" aria-label="Ver como funciona">Ver como funciona</a>
+          </div>
+          <div class="social-proof-pill">
+            <span aria-hidden="true">⭐⭐⭐⭐⭐</span>
+            <strong>Mais de 2.400 famílias na lista de espera</strong>
+          </div>
+          <p class="microcopy">
+            <i data-lucide="shield-check" aria-hidden="true"></i>
+            Sem cartão · Cancele quando quiser · Consentimento parental e LGPD
+          </p>
+        </div>
+
+        <div class="hero-visual animate-on-scroll">
+          <img src="assets/illustrations/axion-mascot.svg" alt="Mascote Axion representando progresso da criança" width="640" height="420" />
+          <div class="phone-frame" role="img" aria-label="Exemplo de tela do aplicativo Axiora Path">
+            <div class="phone-notch" aria-hidden="true"></div>
+            <div class="phone-status">
+              <span>9:41</span>
+              <span>Wi-Fi · 84%</span>
+            </div>
+            <div class="phone-card">
+              <p class="phone-title">Trilha: Disciplina e Autonomia</p>
+              <div class="trail-mini">
+                <span class="done"></span><span class="done"></span><span class="done"></span><span class="active"></span><span></span><span></span>
+              </div>
+            </div>
+            <div class="phone-card">
+              <p class="phone-title">Missão de hoje</p>
+              <p class="phone-subtitle">Economizar R$ 5,00 · +47 XP</p>
+              <p class="mini-btn" aria-hidden="true">Iniciar</p>
+            </div>
+            <div class="phone-card">
+              <div class="phone-row">
+                <strong>Lucas, 9 anos</strong>
+                <span>🔥 12 dias</span>
+              </div>
+              <div class="xp-track"><span></span></div>
+              <div class="phone-row soft">
+                <small>Coins: 220</small>
+                <small>Nível 4</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section metrics" aria-label="Métricas de credibilidade">
+      <div class="container metrics-grid">
+        <article class="metric-card animate-on-scroll">
+          <i data-lucide="target" aria-hidden="true"></i>
+          <h3>6 a 15</h3>
+          <p>Faixa etária coberta com trilhas adaptativas por fase.</p>
+        </article>
+        <article class="metric-card animate-on-scroll">
+          <i data-lucide="trending-up" aria-hidden="true"></i>
+          <h3>+70%</h3>
+          <p>Margem bruta projetada no modelo escalável do produto.</p>
+        </article>
+        <article class="metric-card animate-on-scroll">
+          <i data-lucide="flame" aria-hidden="true"></i>
+          <h3>D30 ≥ 25%</h3>
+          <p>Meta de retenção do MVP com foco em consistência semanal.</p>
+        </article>
+        <article class="metric-card animate-on-scroll">
+          <i data-lucide="shield-check" aria-hidden="true"></i>
+          <h3>3 MVPs</h3>
+          <p>Validações concluídas antes da aceleração de escala.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section problem" aria-label="Problemas que o Axiora resolve">
+      <div class="container">
+        <h2 class="section-title animate-on-scroll">Toda criança tem potencial. O que falta é um sistema consistente.</h2>
+        <div class="problem-grid">
+          <article class="problem-card animate-on-scroll">
+            <i data-lucide="timer-off" aria-hidden="true"></i>
+            <h3>Rotina sem previsibilidade</h3>
+            <p>Conflitos diários para estudar, organizar tarefas e manter constância.</p>
+          </article>
+          <article class="problem-card animate-on-scroll">
+            <i data-lucide="smartphone" aria-hidden="true"></i>
+            <h3>Tela sem evolução</h3>
+            <p>Tempo digital passivo, sem progressão clara e sem indicador de resultado.</p>
+          </article>
+          <article class="problem-card animate-on-scroll">
+            <i data-lucide="wallet" aria-hidden="true"></i>
+            <h3>Finanças ensinadas tarde</h3>
+            <p>Falta um método prático para aprender esforço, escolha e poupança desde cedo.</p>
+          </article>
+        </div>
+        <p class="problem-footer animate-on-scroll">O Axiora Path resolve os três pontos ao mesmo tempo, com gamificação responsável.</p>
+      </div>
+    </section>
+
+    <section class="section" id="como-funciona" aria-label="Jornada Axiora Path">
+      <div class="container">
+        <h2 class="section-title animate-on-scroll">Uma jornada que a criança quer repetir todos os dias.</h2>
+        <div class="journey-grid">
+          <article class="journey-card animate-on-scroll">
+            <span class="chip">Trilhas (Path)</span>
+            <h3>Progressão visual previsível</h3>
+            <p>Unidades com checkpoints claros: feito, atual e próximo passo. Menos fricção e mais continuidade.</p>
+            <img src="assets/illustrations/path-map.svg" loading="lazy" alt="Ilustração de trilha com checkpoints" width="560" height="300" />
+          </article>
+          <article class="journey-card animate-on-scroll">
+            <span class="chip">Missões diárias</span>
+            <h3>Microvitórias em menos de 3 minutos</h3>
+            <p>Tarefas curtas que cabem na rotina real da família e reforçam consistência sem pressão.</p>
+            <ul>
+              <li><i data-lucide="check-circle-2" aria-hidden="true"></i> Ler 10 minutos · +25 XP</li>
+              <li><i data-lucide="check-circle-2" aria-hidden="true"></i> Organizar mochila · +18 XP</li>
+              <li><i data-lucide="check-circle-2" aria-hidden="true"></i> Guardar R$ 2,00 · +30 XP</li>
+            </ul>
+          </article>
+          <article class="journey-card animate-on-scroll">
+            <span class="chip">Economia interna</span>
+            <h3>Educação financeira na prática</h3>
+            <p>XP e Coins viram escolhas reais: comprar agora, poupar para depois ou planejar metas.</p>
+            <div class="economy-list">
+              <p><strong>Skin Astronauta</strong> <span>120 Coins</span></p>
+              <p><strong>Badge Lendário</strong> <span>90 Coins</span></p>
+              <p><strong>Meta de Poupança</strong> <span>Economizando</span></p>
+            </div>
+          </article>
+          <article class="journey-card animate-on-scroll">
+            <span class="chip">Pais</span>
+            <h3>Gestão por dados, não por cobrança</h3>
+            <p>Painel com consistência semanal, áreas de atenção e alertas antes da queda de engajamento.</p>
+            <div class="mini-bars" aria-hidden="true">
+              <span style="height:34%"></span><span style="height:58%"></span><span style="height:42%"></span><span style="height:82%"></span><span style="height:66%"></span><span style="height:76%"></span><span style="height:88%"></span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section axion" aria-label="Motor Axion">
+      <div class="container axion-grid">
+        <div class="animate-on-scroll">
+          <h2 class="section-title">Axion: IA adaptativa que entende o perfil motivacional da criança</h2>
+          <p class="section-subtitle">Não é chatbot. É motor de decisão que ajusta a jornada em tempo real.</p>
+          <ul class="axion-list">
+            <li><i data-lucide="sparkles" aria-hidden="true"></i> Ajusta dificuldade no ritmo certo</li>
+            <li><i data-lucide="sparkles" aria-hidden="true"></i> Recomenda próximo passo com contexto</li>
+            <li><i data-lucide="sparkles" aria-hidden="true"></i> Personaliza reforço positivo por perfil</li>
+            <li><i data-lucide="sparkles" aria-hidden="true"></i> Alerta os pais antes da queda virar problema</li>
+          </ul>
+        </div>
+        <aside class="axion-profile animate-on-scroll" aria-label="Exemplo de perfil analisado pelo Axion">
+          <h3>Perfil Lucas (9 anos)</h3>
+          <div class="profile-tags">
+            <span>Motivação: Visual</span>
+            <span>Consistência: 78%</span>
+            <span>Foco: Finanças</span>
+          </div>
+          <p><strong>Recomendação do Axion:</strong> Missão curta de poupança + leitura para manter streak de 12 dias.</p>
+          <button class="btn btn-ghost" aria-label="Simular recomendação Axion">Simular próxima missão</button>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section features" id="beneficios" aria-label="Benefícios principais">
+      <div class="container">
+        <h2 class="section-title animate-on-scroll">Tudo que sua família precisa em um único lugar.</h2>
+        <div class="features-grid">
+          <article class="feature-card animate-on-scroll"><i data-lucide="route" aria-hidden="true"></i><h3>Trilha personalizada</h3><p>Sequência adaptada por idade, fase e perfil motivacional.</p></article>
+          <article class="feature-card animate-on-scroll"><i data-lucide="zap" aria-hidden="true"></i><h3>Missões diárias</h3><p>Hábitos curtos com reforço positivo e streak sustentável.</p></article>
+          <article class="feature-card animate-on-scroll"><i data-lucide="coins" aria-hidden="true"></i><h3>Economia e loja</h3><p>XP, Coins e tomada de decisão financeira em ambiente seguro.</p></article>
+          <article class="feature-card animate-on-scroll"><i data-lucide="layout-dashboard" aria-hidden="true"></i><h3>Dashboard dos pais</h3><p>Métricas de consistência, evolução e alertas acionáveis.</p></article>
+          <article class="feature-card animate-on-scroll"><i data-lucide="brain-circuit" aria-hidden="true"></i><h3>Motor Axion (IA)</h3><p>Personalização profunda sem configuração manual complexa.</p></article>
+          <article class="feature-card animate-on-scroll"><i data-lucide="users" aria-hidden="true"></i><h3>Multi-criança</h3><p>Uma conta para toda a família, cada filho na própria trilha.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section pricing" id="planos" aria-label="Planos e preços">
+      <div class="container">
+        <h2 class="section-title animate-on-scroll">Planos para cada fase da sua família</h2>
+        <label class="billing-toggle animate-on-scroll" aria-label="Alternar cobrança mensal e anual">
+          <span>Mensal</span>
+          <span class="switch"><input type="checkbox" /></span>
+          <span>Anual</span>
+          <span class="annual-badge">Economize 20%</span>
+        </label>
+
+        <div class="pricing-grid">
+          <article class="pricing-card animate-on-scroll">
+            <h3>FREE</h3>
+            <p class="price"><span data-monthly="R$ 0" data-annual="R$ 0">R$ 0</span></p>
+            <p class="pricing-subtitle">Comece sem compromisso</p>
+            <ul>
+              <li>1 criança</li><li>3 módulos iniciais</li><li>XP e Coins básicos</li><li>Dashboard essencial</li><li>2 missões/dia</li>
+            </ul>
+            <a class="btn btn-ghost" href="#cta-final" aria-label="Começar grátis no plano Free">Começar grátis</a>
+          </article>
+
+          <article class="pricing-card popular animate-on-scroll">
+            <span class="popular-badge">Mais popular</span>
+            <h3>PRO</h3>
+            <p class="price"><span data-monthly="R$ 34/mês" data-annual="R$ 29/mês">R$ 34/mês</span></p>
+            <p class="pricing-subtitle">Equilíbrio ideal entre valor e resultado</p>
+            <ul>
+              <li>Crianças ilimitadas</li><li>Todas as trilhas</li><li>Economia e loja completas</li><li>Relatório semanal detalhado</li><li>Missões ilimitadas</li><li>Eventos mensais</li>
+            </ul>
+            <a class="btn btn-primary" href="#cta-final" aria-label="Assinar plano Pro">Assinar PRO</a>
+          </article>
+
+          <article class="pricing-card animate-on-scroll">
+            <h3>PREMIUM</h3>
+            <p class="price"><span data-monthly="R$ 69/mês" data-annual="R$ 59/mês">R$ 69/mês</span></p>
+            <p class="pricing-subtitle">Para famílias que querem máxima personalização</p>
+            <ul>
+              <li>Tudo do PRO</li><li>Axion completo</li><li>Insights preditivos</li><li>Packs premium exclusivos</li><li>Suporte prioritário</li><li>Acesso antecipado</li>
+            </ul>
+            <a class="btn btn-secondary-dark" href="#cta-final" aria-label="Assinar plano Premium">Assinar Premium</a>
+          </article>
+        </div>
+        <p class="pricing-footnote">Pagamento 100% seguro · Cancele quando quiser · Sem multa</p>
+      </div>
+    </section>
+
+    <section class="section schools" id="para-escolas" aria-label="Solução para escolas">
+      <div class="container schools-grid">
+        <div class="animate-on-scroll">
+          <span class="chip">Para educadores</span>
+          <h2 class="section-title">Axiora Path também para sala de aula e extra-classe</h2>
+          <p class="section-subtitle">Pilotos de 60 a 90 dias com indicadores de engajamento e evidência de impacto pedagógico.</p>
+          <div class="school-benefits">
+            <p><i data-lucide="graduation-cap" aria-hidden="true"></i> Dashboards por turma com evolução individual</p>
+            <p><i data-lucide="book-open-check" aria-hidden="true"></i> Sugestões de intervenção para docentes</p>
+            <p><i data-lucide="line-chart" aria-hidden="true"></i> Relatórios para coordenação e projetos socioemocionais</p>
+          </div>
+          <div class="pilot-steps">
+            <h3>Piloto 60–90 dias</h3>
+            <ol>
+              <li>Diagnóstico e metas de turma</li>
+              <li>Execução assistida com Axion</li>
+              <li>Relatório final com ROI pedagógico</li>
+            </ol>
+          </div>
+          <a class="btn btn-primary" href="#cta-final" aria-label="Levar Axiora Path para minha escola">Quero levar para minha escola</a>
+        </div>
+        <img class="animate-on-scroll" src="assets/illustrations/school-pilot.svg" loading="lazy" alt="Fluxo de piloto escolar em três etapas" width="560" height="300" />
+      </div>
+    </section>
+
+    <section class="section testimonials" aria-label="Depoimentos">
+      <div class="container">
+        <h2 class="section-title animate-on-scroll">Famílias e escolas já validando o impacto</h2>
+        <div class="testimonial-carousel animate-on-scroll">
+          <button class="carousel-btn carousel-prev" aria-label="Depoimento anterior"><i data-lucide="chevron-left" aria-hidden="true"></i></button>
+          <div class="carousel-viewport">
+            <div class="carousel-track">
+              <article class="testimonial-card active">
+                <span class="quote">“</span>
+                <div class="avatar">CM</div>
+                <h3>Carla M., mãe do Pedro (8)</h3>
+                <p>Em duas semanas, ele começou a pedir as missões antes do YouTube. A rotina ficou leve e previsível.</p>
+                <div class="stars">★★★★★</div>
+              </article>
+              <article class="testimonial-card">
+                <span class="quote">“</span>
+                <div class="avatar">RB</div>
+                <h3>Rafael B., pai da Sofia (11)</h3>
+                <p>Ela poupou Coins por três semanas para uma recompensa maior. Aprendeu escolha e planejamento na prática.</p>
+                <div class="stars">★★★★★</div>
+              </article>
+              <article class="testimonial-card">
+                <span class="quote">“</span>
+                <div class="avatar">AL</div>
+                <h3>Ana L., coordenação pedagógica</h3>
+                <p>Os relatórios por turma antecipam quedas de engajamento e ajudam a agir antes do problema crescer.</p>
+                <div class="stars">★★★★★</div>
+              </article>
+            </div>
+          </div>
+          <button class="carousel-btn carousel-next" aria-label="Próximo depoimento"><i data-lucide="chevron-right" aria-hidden="true"></i></button>
+          <div class="carousel-dots">
+            <button class="carousel-dot active" aria-label="Ir para depoimento 1"></button>
+            <button class="carousel-dot" aria-label="Ir para depoimento 2"></button>
+            <button class="carousel-dot" aria-label="Ir para depoimento 3"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section faq" aria-label="Perguntas frequentes">
+      <div class="container faq-wrap">
+        <h2 class="section-title">Perguntas frequentes</h2>
+
+        <article class="faq-item animate-on-scroll">
+          <button class="faq-question" aria-expanded="false">Para qual faixa etária é o Axiora Path? <span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>Para crianças de 6 a 15 anos, com trilhas adaptadas por fase: 6–9, 10–12 e 13–15.</p></div>
+        </article>
+        <article class="faq-item animate-on-scroll">
+          <button class="faq-question" aria-expanded="false">Como funciona o período gratuito? <span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>O plano FREE é permanente e não exige cartão. O upgrade para PRO ou PREMIUM é opcional.</p></div>
+        </article>
+        <article class="faq-item animate-on-scroll">
+          <button class="faq-question" aria-expanded="false">Meu filho pode usar sem supervisão? <span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>Sim. A criança usa de forma autônoma e os pais acompanham por dashboard e alertas inteligentes.</p></div>
+        </article>
+        <article class="faq-item animate-on-scroll">
+          <button class="faq-question" aria-expanded="false">Como o Axion usa dados da criança? <span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>A IA usa apenas dados comportamentais internos para personalização, com consentimento parental e conformidade LGPD.</p></div>
+        </article>
+        <article class="faq-item animate-on-scroll">
+          <button class="faq-question" aria-expanded="false">Posso cadastrar mais de um filho? <span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>No FREE é 1 criança. No PRO e PREMIUM, crianças ilimitadas no mesmo plano familiar.</p></div>
+        </article>
+        <article class="faq-item animate-on-scroll">
+          <button class="faq-question" aria-expanded="false">O Axiora Path substitui a escola? <span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>Não. Ele complementa a educação formal com foco em hábitos, autonomia e finanças comportamentais.</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section final-cta" id="cta-final" aria-label="Chamada final para cadastro">
+      <div class="container">
+        <h2 class="section-title">Seu filho pode começar a evoluir hoje.</h2>
+        <p class="section-subtitle">Entre na lista de espera com acesso antecipado, condição de fundador e suporte direto do time Axiora.</p>
+
+        <form id="waitlist-form" aria-label="Formulário de lista de espera">
+          <input type="text" placeholder="Nome do responsável" required aria-label="Nome do responsável" />
+          <input type="email" placeholder="Seu melhor e-mail" required aria-label="Seu melhor e-mail" />
+          <input type="text" placeholder="Nome do filho (opcional)" aria-label="Nome do filho" />
+          <button class="btn btn-primary" type="submit" aria-label="Entrar na lista de espera">Quero meu acesso antecipado</button>
+        </form>
+
+        <div class="success-message" role="status" aria-live="polite">
+          🎉 Perfeito! Você está na lista. Avisaremos a abertura com condições especiais de fundador.
+        </div>
+
+        <p class="microcopy final">
+          <i data-lucide="lock" aria-hidden="true"></i> Seus dados estão seguros. Zero spam.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand" href="#topo" aria-label="Voltar ao início">
+          <span class="brand-main">AXIORA</span>
+          <span class="brand-accent">PATH</span>
+        </a>
+        <p class="footer-tagline">O Sistema Operacional de Evolução Infantil.</p>
+        <div class="socials">
+          <a href="#" aria-label="Instagram"><i data-lucide="instagram" aria-hidden="true"></i></a>
+          <a href="#" aria-label="TikTok"><i data-lucide="music-2" aria-hidden="true"></i></a>
+          <a href="#" aria-label="YouTube"><i data-lucide="youtube" aria-hidden="true"></i></a>
+          <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin" aria-hidden="true"></i></a>
+        </div>
+      </div>
+      <div>
+        <h3>Produto</h3>
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#planos">Planos e preços</a>
+        <a href="#para-escolas">Para escolas</a>
+        <a href="#beneficios">Benefícios</a>
+      </div>
+      <div>
+        <h3>Empresa</h3>
+        <a href="#">Sobre nós</a>
+        <a href="#">Blog</a>
+        <a href="#">Carreiras</a>
+        <a href="#">Contato</a>
+      </div>
+      <div>
+        <h3>Legal</h3>
+        <a href="#">Política de privacidade</a>
+        <a href="#">Termos de uso</a>
+        <a href="#">Consentimento parental (LGPD)</a>
+        <a href="#">Política de cookies</a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 Axiora Path. Todos os direitos reservados.</div>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
