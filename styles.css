@@ -2253,3 +2253,218 @@ body {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
+
+/* Axiora app branding sync (login screen inspired) */
+:root {
+  --primary: #18365d;
+  --primary-strong: #102846;
+  --secondary: #2ea8c8;
+  --accent: #ff6b3d;
+  --accent-strong: #ef5a2d;
+  --surface-2: #f4f7fc;
+  --text: #1d3558;
+  --muted: #5f7395;
+  --warning: #ff8e4f;
+}
+
+body {
+  background: linear-gradient(180deg, #f3f7ff 0%, #ffffff 42%);
+}
+
+.brand-accent {
+  color: #f7b13b;
+}
+
+.hero {
+  background:
+    radial-gradient(circle at 12% 30%, rgba(241, 192, 74, 0.08), transparent 30%),
+    repeating-linear-gradient(
+      90deg,
+      rgba(46, 168, 200, 0.08) 0px,
+      rgba(46, 168, 200, 0.08) 2px,
+      transparent 2px,
+      transparent 170px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(46, 168, 200, 0.05) 0px,
+      rgba(46, 168, 200, 0.05) 2px,
+      transparent 2px,
+      transparent 170px
+    ),
+    linear-gradient(115deg, #152f50 0%, #1a3b67 48%, #1a355d 100%);
+  color: #e8f1ff;
+}
+
+.hero-copy h1 {
+  color: #ffffff;
+}
+
+.hero-copy > p,
+.microcopy {
+  color: #cfddf6;
+}
+
+.chip-highlight {
+  background: rgba(247, 177, 59, 0.16);
+  border-color: rgba(247, 177, 59, 0.8);
+  color: #f5c35f;
+}
+
+.social-proof-pill {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.28);
+  color: #eef5ff;
+}
+
+.btn-primary {
+  color: #ffffff;
+  background: linear-gradient(180deg, #ff7346, #ff6434);
+  box-shadow: 0 6px 0 #d94f26, 0 16px 24px rgba(255, 107, 61, 0.35);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(180deg, #ff7f56, #ff6a3f);
+}
+
+.btn-primary:active {
+  box-shadow: 0 2px 0 #d94f26, 0 8px 14px rgba(255, 107, 61, 0.28);
+}
+
+.nav-cta {
+  box-shadow: 0 4px 0 #d94f26, 0 8px 16px rgba(255, 107, 61, 0.28);
+}
+
+.phone-frame {
+  border-color: #2f5ea6;
+  box-shadow: 0 24px 40px rgba(7, 24, 46, 0.46);
+}
+
+.resource-item,
+.ctm-card,
+.safety-card,
+.tenant-card,
+.pricing-card,
+.feature-card,
+.problem-card,
+.metric-card {
+  border-color: #d8e5fa;
+  box-shadow: 0 10px 22px rgba(18, 45, 88, 0.1);
+}
+
+/* Anti-slop semantic card system */
+.section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #25558f;
+  background: #e8f2ff;
+  border: 1px solid #c9defe;
+}
+
+.axion .section-eyebrow {
+  color: #f2c974;
+  background: rgba(242, 201, 116, 0.14);
+  border-color: rgba(242, 201, 116, 0.45);
+}
+
+.metric-card,
+.problem-card,
+.feature-card,
+.ctm-card,
+.safety-card,
+.tenant-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.metric-card::before,
+.problem-card::before,
+.feature-card::before,
+.ctm-card::before,
+.safety-card::before,
+.tenant-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 100%;
+  height: 6px;
+}
+
+.tone-sky {
+  background: linear-gradient(160deg, #f4f9ff 0%, #ffffff 74%);
+  border-color: #cfe1ff;
+}
+
+.tone-sky::before {
+  background: linear-gradient(90deg, #4ea8ff, #6fd3ff);
+}
+
+.tone-mint {
+  background: linear-gradient(160deg, #f3fff9 0%, #ffffff 74%);
+  border-color: #c9f1e2;
+}
+
+.tone-mint::before {
+  background: linear-gradient(90deg, #2ec7a5, #78e3c9);
+}
+
+.tone-peach {
+  background: linear-gradient(160deg, #fff6ef 0%, #ffffff 74%);
+  border-color: #ffd9c7;
+}
+
+.tone-peach::before {
+  background: linear-gradient(90deg, #ff8a5b, #ffb08f);
+}
+
+.tone-lilac {
+  background: linear-gradient(160deg, #f8f4ff 0%, #ffffff 74%);
+  border-color: #e2d5ff;
+}
+
+.tone-lilac::before {
+  background: linear-gradient(90deg, #9f88ff, #c5b3ff);
+}
+
+.metric-card i,
+.problem-card i,
+.feature-card i,
+.ctm-card i,
+.safety-card i,
+.tenant-card i {
+  padding: 8px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: inset 0 0 0 1px rgba(49, 82, 136, 0.12);
+}
+
+/* Section differentiation to avoid repeated AI-template feel */
+.metrics .metric-card h3 {
+  margin-top: 10px;
+  font-size: clamp(2rem, 4vw, 2.7rem);
+}
+
+.problem-grid .problem-card {
+  border-left: 5px solid rgba(33, 76, 135, 0.25);
+}
+
+.features-grid .feature-card {
+  background-image: radial-gradient(circle at 92% 14%, rgba(41, 161, 214, 0.14), transparent 28%);
+}
+
+.ctm .ctm-card {
+  border-style: solid;
+}
+
+.tenants .tenant-card h3,
+.safety .safety-card h3 {
+  font-size: 1.2rem;
+}
