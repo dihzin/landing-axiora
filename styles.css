@@ -980,6 +980,21 @@ a {
   background: #f8fcff;
 }
 
+.ctm-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.ctm-step {
+  position: absolute;
+  right: 12px;
+  top: 10px;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  color: #6b8fbb;
+}
+
 .brain-path {
   margin-top: 20px;
   display: flex;
@@ -1165,6 +1180,33 @@ a {
   display: grid;
   gap: 20px;
   align-items: center;
+}
+
+.schools-proof {
+  margin-top: 10px;
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.schools-proof article {
+  border-radius: 12px;
+  padding: 10px 11px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.schools-proof strong {
+  display: block;
+  font-size: 1rem;
+  color: #fff;
+}
+
+.schools-proof span {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.76rem;
+  color: #d8e8ff;
 }
 
 .audience-tag {
@@ -1406,7 +1448,8 @@ a {
 #waitlist-form {
   margin-top: 18px;
   display: grid;
-  gap: 10px;
+  gap: 12px;
+  align-items: end;
 }
 
 .form-field {
@@ -1421,7 +1464,8 @@ a {
   letter-spacing: 0.01em;
 }
 
-#waitlist-form input {
+#waitlist-form input[type="text"],
+#waitlist-form input[type="email"] {
   width: 100%;
   min-height: 48px;
   border-radius: 14px;
@@ -1432,7 +1476,8 @@ a {
   padding: 0 14px;
 }
 
-#waitlist-form input::placeholder {
+#waitlist-form input[type="text"]::placeholder,
+#waitlist-form input[type="email"]::placeholder {
   color: #d5e5ff;
 }
 
@@ -1445,12 +1490,39 @@ a {
 }
 
 .consent-row input {
-  width: 18px;
-  height: 18px;
+  appearance: none;
+  width: 20px;
+  height: 20px;
   min-height: auto;
   margin-top: 2px;
-  accent-color: #ff8a4e;
-  border-radius: 6px;
+  border: 2px solid rgba(255, 255, 255, 0.66);
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.06);
+  display: inline-block;
+  flex: 0 0 auto;
+  position: relative;
+  cursor: pointer;
+}
+
+.consent-row input:checked {
+  background: #ff7d45;
+  border-color: #ff7d45;
+}
+
+.consent-row input:checked::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 1px;
+  width: 5px;
+  height: 10px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.consent-row span {
+  line-height: 1.35;
 }
 
 .optional-field {
@@ -1474,7 +1546,7 @@ a {
 
 .footer-grid {
   display: grid;
-  gap: 20px;
+  gap: 24px;
 }
 
 .footer h3 {
@@ -1485,7 +1557,7 @@ a {
 
 .footer a {
   color: #d2e4ff;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
   display: block;
 }
 
@@ -1505,7 +1577,7 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  min-height: 36px;
+  min-height: 34px;
   padding: 0 12px;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.08);
@@ -1560,6 +1632,7 @@ a {
 @media (min-width: 600px) {
   #waitlist-form {
     grid-template-columns: 1fr 1fr;
+    column-gap: 12px;
   }
 
   #waitlist-form button {
@@ -1572,6 +1645,10 @@ a {
 
   .footer-grid {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .schools-proof {
+    max-width: 520px;
   }
 }
 
@@ -1658,6 +1735,8 @@ a {
 
   #waitlist-form {
     grid-template-columns: 1fr 1fr 1fr auto;
+    row-gap: 10px;
+    column-gap: 12px;
   }
 
   #waitlist-form button {
@@ -1666,6 +1745,10 @@ a {
 
   .consent-row {
     grid-column: 1 / 4;
+  }
+
+  .final-cta .section-subtitle {
+    max-width: 760px;
   }
 
   .footer-grid {
@@ -1699,6 +1782,14 @@ a {
 @media (max-width: 580px) {
   .axion-insights {
     grid-template-columns: 1fr;
+  }
+
+  .schools-proof {
+    grid-template-columns: 1fr;
+  }
+
+  .brain-path {
+    font-size: 0.94rem;
   }
 }
 
